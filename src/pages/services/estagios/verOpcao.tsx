@@ -4,7 +4,7 @@ import Head from "next/head";
 import Top from "@/components/top";
 import Menu from "@/components/menu";
 import Image from "next/image";
-import PurpleButton, { LightButton } from "@/components/buttons";
+import Button from "@/components/buttons";
 
 
 export default function VerOpEstagio() {
@@ -51,11 +51,11 @@ export default function VerOpEstagio() {
         </div>
 
         <div className={cred.btn}>
-          <PurpleButton
+          <Button
             description="Confirmar"
             redirect="candidatura"
-          ></PurpleButton>
-          <LightButton description="Baixar edital" redirect=""></LightButton>
+          ></Button>
+          <Button variant="light" description="Baixar edital" redirect=""></Button>
         </div>
         <Menu />
       </div>
