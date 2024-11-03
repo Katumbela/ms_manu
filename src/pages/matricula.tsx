@@ -1,9 +1,25 @@
-import PurpleButton from "@/components/buttons";
+
 import matr from "../styles/matr.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import Button from "@/components/buttons";
+import { routes } from "@/infra";
+import { useState } from "react";
 
 export default function Account() {
+
+
+  const [name, setName] = useState("")
+  const [number, setNumber] = useState("")
+  const [pin, setPin] = useState("")
+  const matricula = useSearchParams();
+  const school_id = matricula.get('school')
+  const school_name = matricula.get('school_name')
+  const course = matricula.get('chosen_course')
+  const course_id = matricula.get('course')
+
+
   return (
     <>
       <div className={matr.container}>
@@ -40,7 +56,7 @@ export default function Account() {
         </div>
 
         <div className={matr.insName}>
-          <p>ISPTEC - Inst. Sup. Polt. de Tec. e Ciências</p>
+          <p>{school_name}</p>
         </div>
 
         <div className={matr.inputs}>
@@ -57,6 +73,8 @@ export default function Account() {
             </div>
             <input
               type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               placeholder="Nome completo"
               className={matr.input}
             />
@@ -77,6 +95,8 @@ export default function Account() {
             {/* </div> */}
             <input
               type="text"
+              value={number}
+              onChange={(e) => setNumber(e.target.value)}
               placeholder="Número de telefone"
               className={matr.input}
             />
@@ -93,7 +113,9 @@ export default function Account() {
               />
             </div>
             <input
+              disabled
               type="text"
+              value={course ? course : ''}
               placeholder="Número de estudante"
               className={matr.input}
             />
@@ -111,6 +133,8 @@ export default function Account() {
             </div>
             <input
               type="text"
+              value={pin}
+              onChange={(e) => setPin(e.target.value)}
               placeholder="PIN de acesso"
               className={matr.input}
             />
@@ -154,10 +178,10 @@ export default function Account() {
           </div>
         </div>
         <div className={matr.cta}>
-          <PurpleButton
+          <Button
             description="Continuar"
-            redirect="/account"
-          ></PurpleButton>
+            redirect={`${routes.REGISTER_ROUTE}?school=${school_id}&school_name=${school_name}&chosen_course=${course}&course=${course_id}&name=${name}&pin=${pin}&phone=${number}`}
+          />
         </div>
       </div>
     </>
