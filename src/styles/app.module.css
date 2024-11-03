@@ -1,0 +1,81 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  padding: 20px 0 0 0;
+  background: #8879ad url(../../public/vectors/back.svg) center/cover no-repeat !important;
+}
+
+.container .top {
+  width: 90%;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 40px 0 0 0;
+}
+
+.container .top > p {
+  color: #d4d4d4;
+}
+
+.container .top > h2 {
+  color: #f2f2f2;
+}
+
+.container .items {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 40px 0 0 0;
+}
+
+.container .items .item {
+  width: 90%;
+  height: 30vh;
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 40px 0;
+}
+
+.container .items .item .image {
+  width: 100%;
+  height: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: border-box;
+  background-image: url(/bg/multApp.svg);
+}
+
+.container .items .item .desc {
+  width: 100%;
+  height: 30%;
+  background: #f3f0f9;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container .items .item .desc .in {
+  width: 80%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 15px;
+}
+
+.container .items .item .desc .in>h3{
+    font-family: 'montserrat';
+    
+}
