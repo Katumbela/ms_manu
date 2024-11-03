@@ -1,8 +1,7 @@
-import Header from "../components/head";
-import PurpleButton from "../components/buttons";
-import { LightButton } from "../components/buttons";
+import Header from "../components/head"; 
 import welcome from "../styles/welcome.module.css";
 import Link from "next/link";
+import Button from "../components/buttons";
 
 export default function Welcome() {
   return (
@@ -17,14 +16,16 @@ export default function Welcome() {
           </p>
         </div>
         <div className={welcome.cta}>
-          <PurpleButton
+          <Button
+            variant="purple"
             description="Fazer login"
             redirect="/login"
-          ></PurpleButton>
-          <LightButton
+          ></Button>
+          <Button
+            variant="light"
             description="Inscrever-me"
             redirect="/explore"
-          ></LightButton>
+          ></Button>
           <Link href="/explore" prefetch={true} className={welcome.link}>
             Explorar instituições de ensino
           </Link>
