@@ -1,8 +1,7 @@
 import infoc from "../styles/infocurs.module.css";
-import Image from "next/image";
-import PurpleButton from "@/components/buttons";
-import { LightButton } from "@/components/buttons";
+import Image from "next/image"; 
 import Link from "next/link";
+import Button from "@/components/buttons";
 
 export default function InfoCur() {
   return (
@@ -51,14 +50,16 @@ export default function InfoCur() {
             Inovação.
           </div>
           <div className={infoc.btns}>
-            <PurpleButton
+            <Button
+              variant="purple"
               description="Fazer matrícula"
               redirect="/matricula"
-            ></PurpleButton>
-            <LightButton
+            ></Button>
+            <Button
+              variant="light"
               description="Ver requisitos"
               redirect="/requisitos"
-            ></LightButton>
+            ></Button>
           </div>
         </div>
       </div>
