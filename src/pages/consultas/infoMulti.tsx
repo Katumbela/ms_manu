@@ -8,8 +8,15 @@ import Menu from "@/components/menu";
 import CartaoMultischool from "@/components/cards";
 import Image from "next/image";
 import Link from "next/link";
+import { useAppSelector } from "@/hooks";
+import { selectUser } from "@/store";
 
 export default function InfoMulti() {
+
+  const student = useAppSelector(selectUser)
+  const account = student?.account
+
+
   return (
     <>
       <div className={info.container}>
@@ -34,27 +41,22 @@ export default function InfoMulti() {
             <div className={info2.items}>
               <p className={info2.dark_g}>Número de conta</p>
               <p className={`${info2.primary} ${info2.anolec}`}>
-                043 345 160 9
+                {account?.account_number}
               </p>
             </div>
             <div className={info2.items}>
               <p className={info2.dark_g}>Titular</p>
               <p className={`${info2.primary} ${info2.semestre}`}>
-                Ana Correia de Assis Diogo
+                {student?.studentName}
               </p>
             </div>
             <div className={info2.items}>
-              <p className={info2.dark_g}>IBAN</p>
+              <p className={info2.dark_g}>Cartão</p>
               <p className={`${info2.primary} ${info2.anoA}`}>
-                A006 0011 0000 9519097610121
+                {account?.card_number}
               </p>
             </div>
-            <div className={info2.items}>
-              <p className={info2.dark_g}>NIB</p>
-              <p className={`${info2.primary} ${info2.estnum}`}>
-                0011 0000 9519097610121
-              </p>
-            </div>
+
             <div className={info2.items}>
               <p className={info2.dark_g}>Estado</p>
               <p className={`${info2.success} ${info2.curso}`}>Disponível</p>
