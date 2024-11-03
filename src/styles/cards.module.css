@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* overflow-y: scroll; */
+    /* background-color: aqua; */
+}
+
+.top{
+    width: 94%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px 0 0 0;
+    /* background-color: #FFF; */
+}
+
+.top .icon{
+    width: 10%;
+    display: flex;
+    border-radius: 30px;
+    align-items: center;
+    /* background-color: antiquewhite; */
+}
+
+.top p{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'raleway';
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.top .menu{
+    width: 15%;
+    height: 20%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.top .menu .inner{
+    width: 45px;
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    background-color: #EAEAEA;
+    align-items: center;
+    border-radius: 30px;
+    justify-content: center;
+}
+
+.container .cards{
+    width: 96%;
+    /* height: 190vh; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 0 50px 0;
+    justify-content: space-between;
+}
+
+.container  .card{
+    width: 96%;
+    height: 230px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 0 0 0;
+    margin: 0 0 30px 0;
+    box-shadow: 5px 4px 4.3px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+.container .card_m{
+    background: linear-gradient(to top right , #C5A4DB, #535353);
+
+}
+.container .card_e{
+    background: linear-gradient(to left bottom , #535353, #F9D048);
+
+}
+.container .card_est{
+    background: linear-gradient(to top right, #E65525, #5C2D88);
+}
+
+.container .cards .card_m .top{
+    width: 92%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.container .cards .card_m .corpo{
+    width: 87%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 30px 0 0 0;
+}
+
+.container .cards .card_m .corpo .c_number{
+    height: 40px;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    color: #FFF;
+    letter-spacing: 1px;
+}
+
+.container .cards .card_m .corpo .amount{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-family: 'Inconsolata';
+    color: #FFF;
+    font-weight: 100;
+}
+
+.container .cards .card_m .bottom{
+    width: 87%;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0 0 0;
+
+}
+
+.container .cards .card_m .bottom p{
+    font-weight: 700;
+    font-family: 'Raleway';
+    color: #FFF;
+}
+
+
+.container .cards .card_e .top{
+    width: 90%;
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.container .cards .card_e .top .icon{
+    width: 15%;
+}
+
+.container .cards .card_e .top .inst{
+    width: 85%;
+   
+}
+
+.container .cards .card_e .top .inst>p{
+    width: 100%;
+    font-size: 0.8rem;
+    color: #FFF;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.container .cards .card_e .corpo {
+    width: 90%;
+    height: 8.4vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: #fff; */
+    margin: 20px 0 0 0;
+}
+
+.container .cards .card_e .corpo .ft{
+    margin: 0 -25px 0 0;
+}
+
+
+.container .cards .card_e .corpo .info{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 0 0 40px;
+    
+}
+
+.container .cards .card_e .corpo .info ul{
+    list-style: none;
+}
+
+.container .cards .card_e .corpo .info ul li{
+    color: #FFF;
+    font-family: 'Orkney';
+    font-weight: 100;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.container .cards .card_e .bottom{
+    width: 90%;
+    max-height: 6vh ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .cards .card_e .bottom .img{
+    align-items: center;
+    margin: 20px 0 0 -8px;
+
+}
+.container .cards .card_est .top{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    /* align-self: flex-start;
+    padding: 0 0 0 20px; */
+    /* justify-content: space-between; */
+}
+
+.container .cards .card_est .top .gp{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    padding: 0 0 0 20px; 
+    /* /* justify-content: space-between; */
+}
+
+.container .cards .card_est .top .desc{
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'Anta';
+    color: #FFF;
+    font-weight: 400;
+    
+}
+
+.container .cards .card_est .top .desc>p{
+    font-size: 0.7rem;
+    font-weight: 100;
+}
+
+.container .cards .card_est .top .gp .icon{
+    width: 15%;
+}
+
+.container .cards .card_est .top .gp .inst{
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+}
+
+.container .cards .card_est .top .inst>p{
+    width: 100%;
+    font-size: 0.8rem;
+    color: #FFF;
+    font-weight: 600;
+    padding: 0 0 0 10px;
+}
+
+.container .cards .card_est .corpo {
+    width: 90%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: #fff; */
+    margin: 15px 0 0 0;
+}
+
+.container .cards .card_est .corpo .ft{
+    margin: 0 -25px 0 0;
+}
+
+
+.container .cards .card_est .corpo .info{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 0 0 40px;
+
+    
+}
+
+.container .cards .card_est .corpo .info ul{
+    list-style: none;
+}
+
+.container .cards .card_est .corpo .info ul li{
+    color: #FFF;
+    font-family: 'Orkney';
+    font-weight: 100;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.container .cards .card_est .bottom{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .cards .card_est .bottom .img{
+    align-items: center;
+    margin: 20px 0 0 -8px;
+
+}
+
+
+.avatar{
+    width: 50px;
+    height: 50px;
+}
