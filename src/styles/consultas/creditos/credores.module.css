@@ -37,9 +37,9 @@
 }
 
 .container .list .credL {
-  width: 100%;
-  min-height: 63vh;
+  width: 100%; 
   display: flex;
+  gap: 12px;
   flex-direction: column;
   justify-content: space-between;
   margin: 0 0 100px 0;
