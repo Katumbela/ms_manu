@@ -2,8 +2,84 @@ import account from "../styles/account.module.css";
 import Image from "next/image";
 import PurpleButton from "@/components/buttons";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
+import { StudentService } from "@/services";
+import { AlertUtils, StringUtils } from "@/utils";
+import { useState } from "react";
 
 export default function Documents() {
+
+  const matricula = useSearchParams();
+  const school_id = matricula.get('school')
+  const school_name = matricula.get('school_name')
+  const course = matricula.get('chosen_course')
+  const course_id = matricula.get('course')
+  const name = matricula.get('name')
+  const pin = matricula.get('pin')
+  const phone = matricula.get('phone')
+
+  const [documents, setDocuments] = useState<File[]>([]);
+  const [registered, setRegistered] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const navigate = useRouter();
+
+  const handleSubmit = async () => {
+    const student = new StudentService();
+    const formData = {
+      registrationNumber: "",
+      studentName: name,
+      class: "",
+      shift: "",
+      phoneNumber: phone,
+      studentEmail: "",
+      course: course,
+      identificationNumber: "",
+      registrationYear: "",
+      password: pin,
+    };
+
+
+    if (documents.length === 0) {
+      AlertUtils.error("Por favor, preencha todos os campos obrigatórios e envie os documentos.");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      // Primeiro, cria o estudante
+      const studentData = await student.createStudent(formData, documents);
+      if (!studentData) {
+        AlertUtils.error(studentData.statusCode);
+        return;
+      }
+
+      // Se a criação do estudante for bem-sucedida, então matricula
+      const enrollData = {
+        studentId: studentData._id,
+        schoolId: school_id,
+        courseId: course_id,
+        enrolledAt: new Date(),
+      };
+
+      await student.enrollStudent(enrollData);
+      console.log(studentData);
+      setRegistered(true);
+    } catch (error: any) {
+      console.log(error.message);
+      AlertUtils.error('Já existe uma conta com este Nº de identificação e email. Por favor, verifique os dados ou faça login.', "top-right");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files) {
+      setDocuments(Array.from(event.target.files));
+    }
+  };
+
+
+
   return (
     <>
       <div className={account.container}>
@@ -35,7 +111,7 @@ export default function Documents() {
           </div>
         </div>
         <div className={account.header}>
-          <h1>Estás quase lá, precisamos de mais algumas informações!</h1>
+          <h1>Estás quase lá {StringUtils.getFirstWord(name ? name : "")}, precisamos de mais algumas informações!</h1>
           <p>Anexe os documentos correctamente</p>
         </div>
 
