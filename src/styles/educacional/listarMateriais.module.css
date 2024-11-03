@@ -1,0 +1,85 @@
+.container {
+  width: 100%;
+  height: 110vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0 0 0;
+}
+
+.container .top {
+  margin: 40px 0 0 0;
+  width: 80%;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "inter";
+}
+
+.container .top > p {
+  color: #91919f;
+}
+
+.container .top .prof{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 10px 0;
+}
+
+.container .top .prof>h4{
+    font-weight: 400;
+    color: #91919F;
+    font-size: 1.2rem;
+}
+
+.container .top >h3{
+    font-weight: 400;
+    color: #91919F;
+    font-size: 1.29rem;
+}
+
+.container .list {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container .list .top {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.container .list .credL {
+  width: 100%;
+  min-height: 58vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 0 100px 0;
+}
+
+.container .list .credL .inner {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f3f0f9;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: "Inter";
+}
+
+.container .list .credL .inner .in {
+  width: 44%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
