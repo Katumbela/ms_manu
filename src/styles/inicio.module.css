@@ -1,0 +1,112 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carouselContainer {
+  width: 100%;
+  height: auto;   
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  margin: 60px 0 0 0 !important;
+}
+
+.cardWrapper {
+  min-width: 90%; /* O cartão agora ocupa 90% da tela */
+  /* padding: 0 0 0 15px; Adiciona espaço entre os cartões */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 0 15px;
+  
+}
+
+.activeCard {
+  transform: scale(1.05); /* Aumenta ligeiramente o cartão ativo */
+}
+
+.resumo {
+  margin-top: 20px;
+}
+
+.resumo ul {
+  list-style: none;
+  padding: 0;
+}
+
+.transaction {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+/* MULTISCHOOL CARD */
+
+.cards {
+  width: 96%;
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  margin: 40px 0 50px 0;
+  justify-content: space-between;
+  
+}
+
+.card_m .corpo {
+  width: 87%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+
+.card_m .corpo .c_number {
+  height: 40px;
+  font-family: "Montserrat";
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.card_m .corpo .amount {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-family: "Inconsolata";
+  color: #fff;
+  font-weight: 100;
+}
+
+.card_m .bottom {
+  width: 87%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card_m .bottom p {
+  font-weight: 700;
+  font-family: "Raleway";
+  color: #fff;
+}
+
+.resume {
+  width: 100%;
+  height: 43vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  margin: 0px 0 0 0; 
+
+}
