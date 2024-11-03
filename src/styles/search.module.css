@@ -1,0 +1,127 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-image: url(../../public/bg/explore.svg); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  font-family: "Raleway", sans-serif;
+}
+
+.container .top {
+  margin: 20px 0 0 0;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .top .title {
+  width: 84%;
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.container .input {
+  width: 99%;
+  display: flex;
+  justify-content: center;
+  margin: 30px 0 0 0;
+}
+
+.container .input .inputContainer {
+  display: flex;
+  align-items: center;
+  border: 1px solid #919191;
+  border-radius: 30px;
+  padding: 8px;
+  width: 90%;
+}
+
+.container .input .iconContainer {
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .input3 {
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  font-size: 14px;
+  background-color: #fff;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  color: var(--primary);
+
+}
+
+.container .input .input::placeholder {
+  color: rgb(173, 173, 173);
+}
+
+.container .filter {
+  width: 88%;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Montserrat";
+  font-weight: 500;
+  margin: 30px 0 0 0;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+
+.container .results {
+  width: 90%;
+  height: 70vh;
+  margin: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container .results .sres {
+  width: 100%;
+  height: 12vh;
+  border-radius: 15px;
+  box-shadow: 2px 4px 4.3px 0px rgba(0, 0, 0, 0.25);
+}
+
+.container .results .sres .inner {
+  width: 98%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 20px;
+}
+
+.container .results .sres .inner .infoI {
+  padding: 0 0 0 20px;
+  height: 7vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container .results .sres .inner .infoI .name {
+  width: 100%;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.4;
+  font-family: "Raleway" sans-serif;
+}
+
+.container .results .sres .inner .info2 {
+  font-weight: 600;
+  font-family: "Raleway" sans-serif;
+}
+
+.purple {
+  color: var(--primary);
+}
