@@ -12,6 +12,8 @@ export class CreditRequestService {
 
   // Função para criar uma requisição de crédito
   async createCreditRequest(accountNumber: string, amount: number, description?: string, term: string, creditor_code_entity: string, creditor: string): Promise<CreditRequest> {
+    
+    console.log(term)
     try {
       const response = await this.httpClient.post<CreditRequest>(this.creditRequestsUrl, {
         accountNumber,
