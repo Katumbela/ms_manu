@@ -1,0 +1,140 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0 0 0;
+  overflow-y: scroll;
+}
+
+.container .cardC {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(../../public/bg/Circles2.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: border-box;
+  background-size: 97%;
+}
+
+.container .options {
+  width: 98%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container .options .op {
+  width: 33.3%;
+  height: 120px;
+  color: var(--primary);
+  font-family: "Raleway";
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .options .op .circle {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 4px 8.2px 0 rgba(0, 0, 0, 0.274);
+}
+
+.container .available {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px 0 0 0;
+}
+
+.container .available .saldo {
+  width: 223px;
+  height: 120px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 2px 4px 8.2px 0 rgba(0, 0, 0, 0.162);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .available .saldo .inner {
+  width: 85%;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container .available .saldo .inner > p {
+  color: #878484;
+  font-size: 0.9rem;
+}
+
+.container .available .saldo .inner > h2 {
+  color: var(--primary);
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+
+.container .available .creditos {
+  width: 120px;
+  height: 120px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 2px 4px 8.2px 0 rgba(0, 0, 0, 0.162);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .available .creditos .inner {
+  width: 85%;
+  height: 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .available .creditos .inner > p {
+  color: var(--primary);
+  font-size: 0.9rem;
+  font-family: "Raleway";
+  font-weight: 700;
+}
+
+.container .count {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 2px 4px 8.2px 0 rgba(0, 0, 0, 0.162);
+  margin: 40px 0 150px 0;
+  padding: 20px;
+}
+
+.container .count .resume {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+}
