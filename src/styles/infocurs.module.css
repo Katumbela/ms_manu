@@ -1,0 +1,117 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  font-family: "Raleway", sans-serif;
+  background-image: url(../../public/vectors/back.svg);
+}
+
+.container .bg {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-image: url(../../public/bg/inst_bg.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container .bg .inner {
+  width: 90%;
+  height: 12vh;
+  align-self: end;
+  position: absolute;
+  top: 30%;
+  bottom: 55%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.container .bg .back {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 8%;
+  left: 6%;
+  background-color: #d9d9d9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.container .info {
+  width: 90%;
+  height: 50vh;
+  padding: 40px 0 0 0;
+}
+
+.container .info .inC{
+  width: 100%;
+  min-height: 9vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.container .info .inC .title {
+  color: #919191;
+  font-weight: 600;
+}
+
+.container .info .inC>h3 {
+  font-size: 1.3rem;
+}
+
+.container .info .inC .dep {
+  font-weight: 600;
+}
+
+
+.container .info .time {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 0 0 -5px;
+}
+
+.container .info .time .txt {
+  color: #919191;
+  font-weight: 500;
+  font-family: "Montserrat";
+}
+
+.container .info .nstudents {
+  font-family: "Inter";
+  font-weight: 500;
+}
+
+.container .info .desc {
+  width: 100%;
+  text-align: justify;
+  margin: 20px 0 0 0;
+  color: #5a5a5a;
+  line-height: 1.5;
+}
+
+.container .info .btns {
+  width: 100%;
+  height: 14vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px 0 140px 0;
+}
+
+.purple {
+  color: var(--primary);
+}
