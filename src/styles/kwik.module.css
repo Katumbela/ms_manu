@@ -1,0 +1,32 @@
+.info {
+  margin: 30px 0 0 0;
+  width: 90%;
+  font-family: "Montserrat";
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.phoneN {
+  color: #6c5f8d;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.newCode {
+  width: 90%;
+  font-family: "Montserrat";
+  font-weight: 500;
+  text-align: center;
+  margin: -80px 0 0 0;
+}
+
+.newCode .countdown {
+  color: #6c5f8d;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.cta {
+    margin: 30px 0 0 0;
+  width: 90%;
+}
