@@ -1,12 +1,13 @@
 import { useState } from "react";
 import explore from "../styles/explore.module.css";
 import Image from "next/image";
-import { PurpleButton2 } from "@/components/buttons";
+import Button from "@/components/buttons";
+import { routes } from "@/infra";
 
 export default function Explore() {
   const [selectedOption, setSelectedOption] = useState("Angola"); // Estado para armazenar a opção selecionada
 
-  const handleOptionChange = (event) => {
+  const handleOptionChange = (event: any) => {
     setSelectedOption(event.target.value);
   };
 
@@ -24,7 +25,7 @@ export default function Explore() {
                 value="Angola"
                 checked={selectedOption === "Angola"}
                 onChange={handleOptionChange}
-                style={{ display: "none" }} // Esconde o input radio
+                style={{ display: "none" }}
               />
               <div className={explore.first}>
                 <div className={explore.country}>
@@ -191,10 +192,11 @@ export default function Explore() {
             )}
           </div>
           <div className={explore.btn}>
-            <PurpleButton2
+            <Button
+              variant="purple2"
               description="Explorar"
-              redirect="/search"
-            ></PurpleButton2>
+              redirect={`${routes.SEARCH_SCHOOL_ROUTE}?type=${selectedOption == "Angola" ? "ies" : "iem"}`}
+            ></Button>
           </div>
         </div>
       </div>
