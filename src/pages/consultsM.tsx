@@ -5,8 +5,22 @@ import Top from "@/components/top";
 import Menu from "@/components/menu";
 import Image from "next/image";
 import Link from "next/link";
+import { selectUser } from "@/store";
+import { useAppSelector } from "@/hooks";
+import { NumberUtils } from "@/utils";
+import usePeriodicStudentUpdate from "@/hooks/usePeriodicStudentUpdate";
+import { MCardAccount } from "@/components/card_account/card_account";
 
 export default function ConsultsM() {
+
+  const student = useAppSelector(selectUser)
+  const account = student?.account
+
+
+  const adhesionNumber = student?.adhesionNumber ? String(student.adhesionNumber) : "";
+  usePeriodicStudentUpdate({ studentAdhesionNumber: adhesionNumber });
+
+
   return (
     <div className={cons.container}>
       <Head>
@@ -18,9 +32,16 @@ export default function ConsultsM() {
       </Head>
       <Header title="Consultas"></Header>
       <Top information="Consultas" pagina="cards"></Top>
-      
-      <div className={cons.cardC}></div>
-      
+
+      <br />
+
+      <div className="hidden">
+        <div className={`${cons.cardC} hidden`}></div>
+      </div>
+
+      <MCardAccount clickable={false} balance={student?.account!.balance ? student?.account!.balance : 0} card_number={student?.account?.card_number ? student!.account?.card_number : ''} hodler={student!.studentName} />
+
+
       <div className={cons.options}>
         <Link href="/consultas/movimentos" className={cons.op}>
           <div className={cons.circle}>
@@ -67,7 +88,7 @@ export default function ConsultsM() {
         <div className={cons.saldo}>
           <div className={cons.inner}>
             <p>Saldo disponível</p>
-            <h2 className={cons.amount}>50.000,00 kz </h2>
+            <h2 className={cons.amount}>{NumberUtils.formatCurrency(account?.balance ? account?.balance : 0)} </h2>
           </div>
         </div>
         <Link href="/consultas/creditos/creditos" className={cons.creditos}>
@@ -106,7 +127,7 @@ export default function ConsultsM() {
           />
         </div>
       </div>
-      <Menu></Menu>
+      <Menu />
     </div>
   );
 }
