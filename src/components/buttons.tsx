@@ -1,48 +1,9 @@
 import Image from "next/image";
 import btn from "../styles/buttons.module.css";
 
-interface ButtonProps {
-  description: string;
-  redirect: string;
-}
-
-export default function PurpleButton({ description, redirect }: ButtonProps) {
-  
-  return (
-    <button className={`${btn.btn} ${btn.btn_purple}`}>
-      <a href={redirect}>{description}</a>
-    </button>
-  );
-}
-
-export function LightButton({ description, redirect }: ButtonProps) {
-  return (
-    <button className={`${btn.btn} ${btn.btn_light}`}>
-      <a href={redirect}>{description}</a>
-    </button>
-  );
-}
-
-export function LightButton2({ description }: ButtonProps) {
-  return (
-    <button className={`${btn.btn} ${btn.btn_light}`}>
-      <a>{description}</a>
-    </button>
-  );
-}
-
-export function PurpleButton2({ description, redirect }: ButtonProps) {
-  return (
-    <button className={`${btn.btn2} ${btn.btn_purple}`}>
-      <a href={redirect}>{description}</a>
-    </button>
-  );
-}
-
 export function ProofButton() {
   return (
     <button className={btn.downloadButton}>
-      {/* ícone de download */}
       <span className={btn.icon}>
         {" "}
         <Image src={"/icons/download.svg"} width={20} height={20} alt="" />
@@ -51,3 +12,60 @@ export function ProofButton() {
     </button>
   );
 }
+
+
+interface ButtonProps {
+  description: string;
+  redirect?: string;
+  variant?: "purple" | "light" | "light2" | "purple2" | "download";
+  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
+  className?: string;
+  loading?: boolean
+  onClick?: () => void;
+}
+
+export default function Button({
+  description,
+  redirect,
+  variant = "purple",
+  leftIcon,
+  rightIcon,
+  className = "",
+  loading = false,
+  onClick,
+}: ButtonProps) {
+
+  const variantClass = {
+    purple: `${btn.btn} ${btn.btn_purple}`,
+    light: `${btn.btn} ${btn.btn_light}`,
+    light2: `${btn.btn} ${btn.btn_light}`,
+    purple2: `${btn.btn2} ${btn.btn_purple}`,
+    download: `${btn.downloadButton}`,
+  }[variant];
+
+
+  return (
+    <button
+      className={`${variantClass} ${className}`}
+      onClick={onClick}
+      disabled={loading}
+    >
+      {variant === "download" ? (
+        <>
+          <span className={btn.icon}>
+            <Image src="/icons/download.svg" width={20} height={20} alt="" />
+          </span>
+          {description || "Baixar comprovativo"}
+        </>
+      ) : (
+        <a href={redirect}>
+          {leftIcon && <span className={btn.icon}>{leftIcon}</span>}
+          {description}
+          {rightIcon && <span className={btn.icon}>{rightIcon}</span>}
+        </a>
+      )}
+    </button>
+  );
+}
+
