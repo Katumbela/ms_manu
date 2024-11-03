@@ -1,0 +1,58 @@
+.btn {
+  width: 90vw;
+  color: #fff;
+  padding: 16px;
+  border-radius: 20px;
+  border: none;
+  font-weight: 700;
+  font-size: 1rem;
+  font-family: "raleway", sans-serif;
+}
+
+.btn2 {
+  width: 85vw;
+  color: #fff;
+  padding: 16px;
+  border-radius: 20px;
+  border: none;
+  font-weight: 700;
+  font-size: 1rem;
+  font-family: "raleway", sans-serif;
+}
+
+.btn_purple {
+  background: var(--primary);
+  color: #fff !important;
+}
+
+.btn_light {
+  color: #6c5f8d;
+  background-color: #fff;
+  border: 1px solid #6c5f8d;
+}
+
+
+.downloadButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 40px;
+  font-size: 16px;
+  color: #6f5499; /* Cor do texto */
+  background-color: #f9f9f9; /* Fundo branco ou similar */
+  border: 1px solid #6f5499; /* Cor da borda */
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.downloadButton:hover {
+  background-color: #e5e5e5; /* Cor ao passar o mouse */
+}
+
+.icon {
+  margin-right: 8px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
