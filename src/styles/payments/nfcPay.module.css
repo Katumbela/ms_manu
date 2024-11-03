@@ -1,0 +1,28 @@
+
+.nfc {
+  width: 100%;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 34px 0 0 0;
+  font-family: 'Raleway';
+  color: #989898;
+  font-weight: 600;
+}
+
+.nfc>p{
+    margin: 20px 0 0 0;
+}
+
+.card {
+  margin: 0px 0 -400px 0 !important;
+}
+
+.btn{
+    margin: 300px 0 -20px 0;
+}
+
+.card{
+  margin: 80px 0 0 0 !important;
+}
