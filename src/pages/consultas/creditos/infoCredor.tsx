@@ -68,7 +68,7 @@ export default function InfoCredor() {
         setLoading(false)
         console.log(response)
         AlertUtils.success("Credito solicitado com sucesso!")
-        window.location.href = "consultas/creditos/success"
+        window.location.href = "/success"
 
       } catch (error: any) {
         AlertUtils.error("Ocorreu um erro ao solicitar seu crédito, tente novamente mais tarde!")
@@ -175,7 +175,7 @@ export default function InfoCredor() {
         </div>
         <Button
           loading={loading}
-
+          onClick={handleRequestCredit}
           description="Confirmar"
         ></Button>
         <Menu />
