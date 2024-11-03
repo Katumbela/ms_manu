@@ -6,9 +6,49 @@ import payC from "@/styles/payments/instituicao/confirmacao2.module.css";
 import Menu from "@/components/menu";
 import Image from "next/image";
 import PurpleButton from "@/components/buttons";
+import { selectUser } from "@/store";
+import { useAppSelector } from "@/hooks";
+import { NumberUtils } from "@/utils";
+import usePeriodicStudentUpdate from "@/hooks/usePeriodicStudentUpdate";
+import { Transaction } from "@/infra/interfacess";
+import { TransactionService } from "@/services";
+import { useState, useEffect } from "react";
 
 
 export default function Transfer() {
+
+  const student = useAppSelector(selectUser)
+  const account = student?.account
+
+
+  const [transactions, setTransactions] = useState<Transaction[]>([])
+
+  const adhesionNumber = student?.adhesionNumber ? String(student.adhesionNumber) : "";
+  usePeriodicStudentUpdate({ studentAdhesionNumber: adhesionNumber });
+
+
+  const TransactsService = new TransactionService()
+
+  async function getTransacts() {
+    if (student?.account?._id) {
+      const datas = await TransactsService.getTransactionsByAccount(student.account._id);
+      return datas;
+    }
+    return [];
+  }
+
+  useEffect(() => {
+    async function fetchTransactions() {
+      const transacts = await getTransacts();
+      console.log(transacts);
+      setTransactions(transacts); // Atualizando o estado com as transações
+    }
+
+    fetchTransactions();
+  }, []);
+
+
+
   return (
     <>
       <div className={cred.container}>
@@ -25,7 +65,7 @@ export default function Transfer() {
           <div className={cred.inner1}>
             <Image src={"/avatars/ana.svg"} width={80} height={80} alt="" />
             <p>Saldo disponível</p>
-            <h1>35.000,00 kz</h1>
+            <h1>{NumberUtils.formatCurrency(account?.balance ? account?.balance : 0)}</h1>
           </div>
         </div>
 
