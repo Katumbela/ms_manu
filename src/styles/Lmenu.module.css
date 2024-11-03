@@ -1,0 +1,107 @@
+/* Lmenu.module.css */
+
+.menuLateral {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed; /* Mantém o menu fixo na tela */
+  top: 0;
+  left: 0;
+  width: 250px; /* Largura do menu */
+  height: 100%; /* Altura do menu */
+  background-color: #fff; /* Cor de fundo do menu */
+  box-shadow: 2px 0 5px rgba(92, 92, 92, 0.5);
+  transform: translateX(-100%); /* Move o menu para fora da tela */
+  transition: transform 0.3s ease; /* Animação para a transição */
+  z-index: 9999999999; /* Garante que o menu fique acima de outros elementos */
+}
+
+/* Quando o menu estiver aberto */
+.open {
+  transform: translateX(0); /* Move o menu para dentro da tela */
+}
+
+/* Quando o menu estiver fechado */
+.closed {
+  transform: translateX(-100%); /* Garante que ele fique fora da tela */
+}
+
+/* Estilos para o conteúdo do menu */
+.menuLateral ul {
+  list-style-type: none; /* Remove as marcas das listas */
+  padding: 0;
+  margin: 0;
+}
+
+.menuLateral li {
+  padding: 15px; /* Espaçamento interno para os itens */
+  cursor: pointer; /* Muda o cursor para indicar interatividade */
+  transition: background-color 0.3s; /* Efeito ao passar o mouse */
+}
+
+.menuLateral li:hover {
+  background-color: #f0f0f0; /* Efeito de destaque ao passar o mouse */
+}
+
+.closeButton {
+  background: transparent; /* Botão transparente */
+  border: none; /* Sem borda */
+  cursor: pointer; /* Muda o cursor para indicar interatividade */
+  font-size: 1.5rem; /* Tamanho do ícone */
+  position: absolute; /* Posiciona o botão no topo do menu */
+  top: 10px; /* Distância do topo */
+  right: 10px; /* Distância da direita */
+}
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+}
+
+.container .first {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container .logo {
+  margin: 20px 0 30px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .first>ul{
+    width: 90%;
+    padding: 0 0 0 20px;
+}
+.container .first>ul>li{
+    background: #F2F2F2;
+    margin: 20px 0 0 0;
+    font-family: 'Raleway';
+    color: #6A6868;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    border-radius: 15px;
+
+}
+.item{
+    width: 100%;
+}
+.container .first>ul>li .item>p{
+    font-size: 0.86rem;
+    width: 90%;
+    padding: 0 0 0 10px;
+}
+
+.container .bottom{
+    width: 100%;
+    background: var(--primary);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
