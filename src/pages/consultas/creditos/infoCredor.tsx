@@ -5,9 +5,86 @@ import Top from "@/components/top";
 import Menu from "@/components/menu";
 import Image from "next/image";
 import CreditDetails from "@/components/creditRange";
-import PurpleButton from "@/components/buttons";
+import Button from "@/components/buttons";
+import { useSearchParams } from "next/navigation";
+import { Creditor } from "@/infra/interfacess";
+import { useEffect, useState } from "react";
+import { CreditorsService } from "@/services/creditors_services";
+import styles from "@/styles/consultas/creditos/creditRange.module.css"; // Importing CSS module for styling
+import { CreditRequestService } from "@/services";
+import { useAppSelector } from "@/hooks";
+import { selectUser } from "@/store";
+import { AlertUtils } from "@/utils";
+
 
 export default function InfoCredor() {
+
+  const [creditor, setCreditor] = useState<Creditor | null>(null)
+  const [loading, setLoading] = useState(false)
+  const student = useAppSelector(selectUser)
+  const account = student?.account
+
+  const q = useSearchParams()
+  const credor_id = q.get("credor")
+  // State to track amount and term
+  const [amount, setAmount] = useState(10000); // Default value: 10,000 kz
+  const [term, setTerm] = useState(2); // Default term: 2 months
+
+  // Handlers to increase or decrease amount and term
+  const handleAmountChange = (e: any) => setAmount(Number(e.target.value));
+  const handleTermChange = (e: any) => setTerm(Number(e.target.value));
+
+  const increaseAmount = () =>
+    setAmount((prev) => Math.min(prev + 1000, 50000));
+  const decreaseAmount = () => setAmount((prev) => Math.max(prev - 1000, 0));
+
+  const increaseTerm = () => setTerm((prev) => Math.min(prev + 1, 24));
+  const decreaseTerm = () => setTerm((prev) => Math.max(prev - 1, 1));
+
+
+
+  const creditService = new CreditorsService()
+
+  useEffect(() => {
+    async function GetCreditor() {
+      const data = await creditService.getCreditorById(credor_id ? credor_id : "")
+      setCreditor(data)
+    }
+    GetCreditor()
+  }, [])
+
+
+  const creditRequestService = new CreditRequestService()
+
+  async function handleRequestCredit() {
+    setLoading(true)
+
+    if (student && account) {
+
+      try {
+
+        const response = await creditRequestService.createCreditRequest(account.account_number, amount, "Credito estudantil para o estudante " + student.studentName, term, creditor?.code_entity, creditor?._id)
+
+        setLoading(false)
+        console.log(response)
+        AlertUtils.success("Credito solicitado com sucesso!")
+        window.location.href = "consultas/creditos/success"
+
+      } catch (error: any) {
+        AlertUtils.error("Ocorreu um erro ao solicitar seu crédito, tente novamente mais tarde!")
+
+      } finally {
+
+        setLoading(false)
+      }
+
+    }
+
+
+
+  }
+
+
   return (
     <>
       <div className={cred.container}>
@@ -18,17 +95,17 @@ export default function InfoCredor() {
           />
         </Head>
         <Header title="Kwik - Pagamentos Instantâneos"></Header>
-        <Top information="Kwik - Pag. Inst" pagina="/consultsM"></Top>
+        <Top information="Informações do Credor" pagina="/consultsM"></Top>
 
         <div className={cred.top}>
-          <Image src={"/icons/kwik.svg"} width={60} height={60} alt="" />
-          <p>Kwik Pagamentos Instantâneos</p>
+          <img src={creditor?.logo} width={60} height={60} alt="" />
+          <p>{creditor?.name}</p>
         </div>
 
         <div className={cred.info}>
           <div className={cred.items}>
             <p className={cred.dark_g}>Entidade nº</p>
-            <p className={`${cred.primary} ${cred.name}`}>00040</p>
+            <p className={`${cred.primary} ${cred.name}`}>{creditor?.code_entity}</p>
           </div>
           <div className={cred.items}>
             <p className={cred.dark_g}>Tipo de crédito</p>
@@ -49,11 +126,58 @@ export default function InfoCredor() {
         <div className={cred.details}>
           <p>Detalhes do crédito</p>
         </div>
-        <CreditDetails />
-        <PurpleButton
+
+        <div className={styles.container}>
+
+          <div className={styles.sliderContainer}>
+            <div className={styles.label}>Montante</div>
+            <div className={styles.controls}>
+              <button onClick={decreaseAmount} className={styles.button}>
+                -
+              </button>
+              <input
+                type="range"
+                min="26000"
+                max="3500000"
+                step="1000"
+                value={amount}
+                onChange={handleAmountChange}
+                className={styles.slider}
+              />
+              <button onClick={increaseAmount} className={styles.button}>
+                +
+              </button>
+            </div>
+            <div className={styles.value}>{amount.toLocaleString()} kz</div>
+          </div>
+
+          <div className={styles.sliderContainer}>
+            <div className={styles.label}>Prazo</div>
+            <div className={styles.controls}>
+              <button onClick={decreaseTerm} className={styles.button}>
+                -
+              </button>
+              <input
+                type="range"
+                min="1"
+                max="96"
+                step="1"
+                value={term}
+                onChange={handleTermChange}
+                className={styles.slider}
+              />
+              <button onClick={increaseTerm} className={styles.button}>
+                +
+              </button>
+            </div>
+            <div className={styles.value}>{term} meses</div>
+          </div>
+        </div>
+        <Button
+          loading={loading}
+
           description="Confirmar"
-          redirect="confirmCredit"
-        ></PurpleButton>
+        ></Button>
         <Menu />
       </div>
     </>
