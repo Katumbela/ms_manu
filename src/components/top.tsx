@@ -12,10 +12,10 @@ interface ButtonProps {
 }
 
 export default function Top({ information, pagina }: ButtonProps) {
-  const [isMenuOpen, setMenuOpen] = useState(false); // Estado para controlar o menu
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setMenuOpen((prev) => !prev); // Alterna o estado do menu
+    setMenuOpen((prev) => !prev);
   };
 
   return (
