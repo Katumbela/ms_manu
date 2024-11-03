@@ -1,0 +1,12 @@
+{
+  "navbar": {
+    "cat": "Categorias",
+    "courses": "Cursos",
+    "placeholder": "O que deseja aprender ?",
+    "login": "Entrar",
+    "sigup": "Signup",
+    "companie": "Para Empresas",
+    "teach": "Ensine na RCS",
+    "support": "Suporte"
+  }
+}
