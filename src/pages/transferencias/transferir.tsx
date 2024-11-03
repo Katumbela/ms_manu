@@ -2,9 +2,7 @@ import Header from "@/components/head";
 import transf from "@/styles/transfer/transferir.module.css";
 import Head from "next/head";
 import Top from "@/components/top";
-import payC from "@/styles/payments/instituicao/confirmacao2.module.css";
 import Menu from "@/components/menu";
-import Image from "next/image";
 import PurpleButton from "@/components/buttons";
 import Link from "next/link";
 
