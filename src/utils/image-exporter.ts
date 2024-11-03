@@ -29,6 +29,7 @@ import unitel from '../assets/schools/unitel.svg'
 import m_card from '../assets/extras/card_multiscool.png'
 import bg_lines from '../assets/svgs/bg-lines.svg'
 import ms_card_account_lines from '../assets/bgs/bg-card.png'
+import ms_card_account_lines_circles from '../assets/bgs/circles2.svg'
 import steps_register from '../assets/svgs/steps.svg'
 
 // exportando todos os backgrounds
@@ -38,9 +39,9 @@ export const bgs = {
   bg_lines,
   bg_triangles,
   school_choose_1,
+  ms_card_account_lines_circles,
   school_choose_2,
   ms_card_account_lines
-
 }
 
 // exportando os logos 
