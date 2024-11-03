@@ -4,6 +4,7 @@ export interface CreditRequest {
   _id: number;
   amount: number;
   status: 'pending' | 'approved' | 'denied';
+  creditor?: string
   createdAt: Date;
   account: Account;
   description?: string;
