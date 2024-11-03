@@ -2,12 +2,30 @@ import Header from "@/components/head";
 import cred from "@/styles/consultas/creditos/credores.module.css";
 import Head from "next/head";
 import Top from "@/components/top";
-import payC from "@/styles/payments/instituicao/confirmacao2.module.css";
 import Menu from "@/components/menu";
 import Image from "next/image";
 import Link from "next/link";
+import { Creditor } from "@/infra/interfacess";
+import { CreditorsService } from "@/services/creditors_services";
+import { useState, useEffect } from "react";
 
 export default function Credores() {
+
+
+  const [creditors, setCreditors] = useState<Creditor[]>([])
+  const creditService = new CreditorsService()
+
+  useEffect(() => {
+    async function GetCreditors() {
+      const data = await creditService.getCreditors()
+      setCreditors(data)
+    }
+
+    GetCreditors()
+  }, [])
+
+
+
   return (
     <>
       <div className={cred.container}>
@@ -29,32 +47,17 @@ export default function Credores() {
             <p>Valor máximo</p>
           </div>
           <div className={cred.credL}>
-            <Link href="infoCredor" className={cred.inner}>
-              <Image src={"/icons/kwik.svg"} width={60} height={60} alt="" />
-              <p className={cred.in}>Kwik</p>
-              <p>30.000,00 kz</p>
-            </Link>
-            <Link href="infoCredor" className={cred.inner}>
-              <Image src={"/icons/kwik.svg"} width={60} height={60} alt="" />
-              <p className={cred.in}>Kwik</p>
-              <p>30.000,00 kz</p>
-            </Link>
-            <Link href="infoCredor" className={cred.inner}>
-              <Image src={"/icons/kwik.svg"} width={60} height={60} alt="" />
-              <p className={cred.in}>Kwik</p>
-              <p>30.000,00 kz</p>
-            </Link>
-            <Link href="infoCredor" className={cred.inner}>
-              <Image src={"/icons/kwik.svg"} width={60} height={60} alt="" />
-              <p className={cred.in}>Kwik</p>
-              <p>30.000,00 kz</p>
-            </Link>
-            <Link href="infoCredor" className={cred.inner}>
-              <Image src={"/icons/kwik.svg"} width={60} height={60} alt="" />
-              <p className={cred.in}>Kwik</p>
-              <p>30.000,00 kz</p>
-            </Link>
-            
+
+            {
+              creditors.map((creditor, i) => (
+                <Link key={i} href={"infoCredor?credor=" + creditor._id} className={cred.inner}>
+                  <img src={creditor.logo} width={60} height={60} alt="" />
+                  <p className={cred.in}>{creditor.name}</p>
+                  <p>30.000,00 kz</p>
+                </Link>
+              ))
+            }
+
           </div>
         </div>
 
