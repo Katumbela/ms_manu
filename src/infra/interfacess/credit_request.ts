@@ -8,4 +8,6 @@ export interface CreditRequest {
   createdAt: Date;
   account: Account;
   description?: string;
+  term?: string
+  creditor_entity_code?: string
 }
