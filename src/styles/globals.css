@@ -1,3 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
 @import url("https://fonts.cdnfonts.com/css/inter");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
@@ -11,12 +17,12 @@
   --txt-light: #FFFFFF;
 }
 
-.danger{
-    color: #EC4242;
+.danger {
+  color: #EC4242;
 }
 
-.success{
-    color: #65B228;
+.success {
+  color: #65B228;
 }
 
 /* @media (prefers-color-scheme: dark) {
