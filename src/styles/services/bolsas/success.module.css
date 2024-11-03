@@ -1,0 +1,55 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f5f7ff !important;
+  padding: 20px 0 0 0;
+}
+
+.container .art {
+  width: 90%;
+  height: 45vh;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(../../../../public/bg/confetti.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: border-box;
+}
+
+.container .art .art1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .info {
+  width: 85%;
+  height: 13vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 40px 0 0 0;
+}
+
+.container .info > h1 {
+  color: var(--primary);
+}
+
+.container .info > p {
+  color: #131313;
+  font-family: "raleway";
+  font-weight: 500;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.container .btn {
+  margin: 30px 0 0 0;
+}
