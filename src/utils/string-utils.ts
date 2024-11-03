@@ -10,6 +10,17 @@ type GenerateProps = {
 export class StringUtils {
 	static readonly ALPHABET = 'abcdefghijklmnopqrstuvwxyz'
 
+
+
+
+	static abbreviateText = (text: string, maxLength: number): string => {
+		if (text.length > maxLength) {
+			return text.slice(0, maxLength) + '...';
+		}
+		return text;
+	};
+
+
 	static generate(params?: GenerateProps) {
 		const length = params?.length ?? 8
 		const dataSource = params?.dataSource || StringUtils.ALPHABET
