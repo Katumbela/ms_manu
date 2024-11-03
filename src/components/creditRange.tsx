@@ -7,8 +7,8 @@ export default function CreditDetails() {
   const [term, setTerm] = useState(2); // Default term: 2 months
 
   // Handlers to increase or decrease amount and term
-  const handleAmountChange = (e) => setAmount(Number(e.target.value));
-  const handleTermChange = (e) => setTerm(Number(e.target.value));
+  const handleAmountChange = (e: any) => setAmount(Number(e.target.value));
+  const handleTermChange = (e: any) => setTerm(Number(e.target.value));
 
   const increaseAmount = () =>
     setAmount((prev) => Math.min(prev + 1000, 50000));
@@ -18,7 +18,7 @@ export default function CreditDetails() {
   const decreaseTerm = () => setTerm((prev) => Math.max(prev - 1, 1));
 
   return (
-    
+
     <div className={styles.container}>
 
       <div className={styles.sliderContainer}>
