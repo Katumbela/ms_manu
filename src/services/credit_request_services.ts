@@ -1,4 +1,4 @@
- 
+
 import AxiosHttpClient from '@/api/axiosHttpClient';
 import type { CreditRequest } from '@/infra/interfacess';
 
@@ -11,12 +11,15 @@ export class CreditRequestService {
   }
 
   // Função para criar uma requisição de crédito
-  async createCreditRequest(accountNumber: string, amount: number, description?: string): Promise<CreditRequest> {
+  async createCreditRequest(accountNumber: string, amount: number, description?: string, term: string, creditor_code_entity: string, creditor: string): Promise<CreditRequest> {
     try {
       const response = await this.httpClient.post<CreditRequest>(this.creditRequestsUrl, {
         accountNumber,
         amount,
         description,
+        term,
+        creditor,
+        creditor_code_entity
       });
       return response;
     } catch (error) {
