@@ -1,0 +1,64 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  background-image: url(../../../../public/vectors/back.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: border-box;
+  overflow: hidden;
+  font-family: "inter", sans-serif;
+  padding: 10px 0 0 0;
+}
+
+.container .foto{
+    width: 100%;
+    height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .info{
+    width: 90%;
+    height: 44vh;
+    background-color: #F4F4F4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.container .info .items{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+.container .button{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0 120px 0;
+}
+.dark_g{
+    color: #9eabc4;
+}
+
+.primary{
+    color: var(--primary);
+}
+
+.success{
+    color: #0EBC29;
+    font-family: "Montserrat";
+}
