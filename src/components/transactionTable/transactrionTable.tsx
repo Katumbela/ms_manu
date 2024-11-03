@@ -105,14 +105,14 @@ export const TransactionList: React.FC<TransactionListProps> = ({ transactions, 
                       <Icon className="text-lg text-primary" />
                     </div>
                     <div className="ml-4">
-                      <p className="font-semibold text-gray-900">{abbreviateText(transaction.description || 'Transação', 22)}</p> {/* Texto abreviado */}
+                      <p className="font-semibold text-sm text-gray-900">{abbreviateText(transaction.description || 'Transação', 22)}</p> {/* Texto abreviado */}
                       <p className="text-xs text-gray-500">{new Date(transaction.createdAt).toLocaleDateString()}</p>
                       <span className={`text-xs ${getStatusColor(transaction.status)}`}>
                         {transaction.status === 'approved' ? 'Aprovada' : transaction.status === 'success' ? 'Sucesso' : transaction.status === 'failed' ? 'Falhou' : 'Pendente'}
                       </span>
                     </div>
                   </div>
-                  <div className={`font-semibold ${amountColor}`}>
+                  <div className={`font-semibold text-xs ${amountColor}`}>
                     {transaction.type === 'debit' ? '-' : '+'} {NumberUtils.formatCurrency(transaction.amount)}
                   </div>
                 </li>
