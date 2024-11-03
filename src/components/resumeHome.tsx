@@ -1,6 +1,7 @@
 import home from "@/styles/resumeHome.module.css";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/image"; 
+import { Transaction } from "@/infra/interfacess";
 
 export default function InstituicaoResume() {
   return (
@@ -246,6 +247,10 @@ export default function InstituicaoResume() {
   );
 }
 
+interface MResumeProps {
+  transactions: Transaction[]
+}
+
 export function MultischoolResume() {
   return (
     <div className={home.content}>
@@ -275,215 +280,7 @@ export function MultischoolResume() {
             <p className={`${home.price} ${home.danger}`}>-50.000,00 kz</p>
           </div>
         </div>
-        <div className={home.details}>
-          <div className={home.icon}>
-            <Image
-              className={home.avatar}
-              src={"/icons/cons/money.svg"}
-              alt="ba2ck"
-              width={30}
-              height={30}
-              priority
-            />
-          </div>
-          <div className={home.desc}>
-            <p>Propina Julho</p>
-            <small>05.07.2024</small>
-          </div>
-          <div className={home.amount}>
-            <p className={`${home.price} ${home.danger}`}>-50.000,00 kz</p>
-          </div>
-        </div>
-        <div className={home.details}>
-          <div className={home.icon}>
-            <Image
-              className={home.avatar}
-              src={"/icons/cons/money.svg"}
-              alt="ba2ck"
-              width={30}
-              height={30}
-              priority
-            />
-          </div>
-          <div className={home.desc}>
-            <p>Propina Julho</p>
-            <small>05.07.2024</small>
-          </div>
-          <div className={home.amount}>
-            <p className={`${home.price} ${home.danger}`}>-50.000,00 kz</p>
-          </div>
-        </div>
-        <div className={home.details}>
-          <div className={home.icon}>
-            <Image
-              className={home.avatar}
-              src={"/icons/cons/money.svg"}
-              alt="ba2ck"
-              width={30}
-              height={30}
-              priority
-            />
-          </div>
-          <div className={home.desc}>
-            <p>Propina Julho</p>
-            <small>05.07.2024</small>
-          </div>
-          <div className={home.amount}>
-            <p className={`${home.price} ${home.danger}`}>-50.000,00 kz</p>
-          </div>
-        </div>
-        <div className={home.details}>
-          <div className={home.icon}>
-            <Image
-              className={home.avatar}
-              src={"/icons/cons/money.svg"}
-              alt="ba2ck"
-              width={30}
-              height={30}
-              priority
-            />
-          </div>
-          <div className={home.desc}>
-            <p>Propina Julho</p>
-            <small>05.07.2024</small>
-          </div>
-          <div className={home.amount}>
-            <p className={`${home.price} ${home.danger}`}>-50.000,00 kz</p>
-          </div>
-        </div>
-        <div className={home.details}>
-          <div className={home.icon}>
-            <Image
-              className={home.avatar}
-              src={"/icons/cons/money.svg"}
-              alt="ba2ck"
-              width={30}
-              height={30}
-              priority
-            />
-          </div>
-          <div className={home.desc}>
-            <p>Propina Julho</p>
-            <small>05.07.2024</small>
-          </div>
-          <div className={home.amount}>
-            <p className={`${home.price} ${home.danger}`}>-50.000,00 kz</p>
-          </div>
-        </div>
-        <div className={home.details}>
-          <div className={home.icon}>
-            <Image
-              className={home.avatar}
-              src={"/icons/cons/money.svg"}
-              alt="ba2ck"
-              width={30}
-              height={30}
-              priority
-            />
-          </div>
-          <div className={home.desc}>
-            <p>Propina Julho</p>
-            <small>05.07.2024</small>
-          </div>
-          <div className={home.amount}>
-            <p className={`${home.price} ${home.success}`}>+50.000,00 kz</p>
-          </div>
-        </div>
-        <div className={home.details}>
-          <div className={home.icon}>
-            <Image
-              className={home.avatar}
-              src={"/icons/cons/money.svg"}
-              alt="ba2ck"
-              width={30}
-              height={30}
-              priority
-            />
-          </div>
-          <div className={home.desc}>
-            <p>Propina Julho</p>
-            <small>05.07.2024</small>
-          </div>
-          <div className={home.amount}>
-            <p className={`${home.price} ${home.danger}`}>-50.000,00 kz</p>
-          </div>
-        </div>
-        <div className={home.details}>
-          <div className={home.icon}>
-            <Image
-              className={home.avatar}
-              src={"/icons/cons/money.svg"}
-              alt="ba2ck"
-              width={30}
-              height={30}
-              priority
-            />
-          </div>
-          <div className={home.desc}>
-            <p>Propina Julho</p>
-            <small>05.07.2024</small>
-          </div>
-          <div className={home.amount}>
-            <p className={`${home.price} ${home.danger}`}>-50.000,00 kz</p>
-          </div>
-        </div>
-        <div className={home.details}>
-          <div className={home.icon}>
-            <Image
-              className={home.avatar}
-              src={"/icons/cons/money.svg"}
-              alt="ba2ck"
-              width={30}
-              height={30}
-              priority
-            />
-          </div>
-          <div className={home.desc}>
-            <p>Propina Julho</p>
-            <small>05.07.2024</small>
-          </div>
-          <div className={home.amount}>
-            <p className={`${home.price} ${home.danger}`}>-50.000,00 kz</p>
-          </div>
-        </div>
-        <div className={home.details}>
-          <div className={home.icon}>
-            <Image
-              className={home.avatar}
-              src={"/icons/cons/money.svg"}
-              alt="ba2ck"
-              width={30}
-              height={30}
-              priority
-            />
-          </div>
-          <div className={home.desc}>
-            <p>Propina Julho</p>
-            <small>05.07.2024</small>
-          </div>
-          <div className={home.amount}>
-            <p className={`${home.price} ${home.danger}`}>-50.000,00 kz</p>
-          </div>
-        </div>
-        <div className={home.details}>
-          <div className={home.icon}>
-            <Image
-              className={home.avatar}
-              src={"/icons/cons/money.svg"}
-              alt="ba2ck"
-              width={30}
-              height={30}
-              priority
-            />
-          </div>
-          <div className={home.desc}>
-            <p>Propina Julho</p>
-            <small>05.07.2024</small>
-          </div>
-          <div className={home.amount}>
-            <p className={`${home.price} ${home.danger}`}>-50.000,00 kz</p>
-          </div>
-        </div>
+
       </div>
     </div>
   );
