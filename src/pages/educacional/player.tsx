@@ -4,9 +4,7 @@ import player from "@/styles/educacional/player.module.css";
 import Image from "next/image";
 import Head from "next/head";
 import Top from "@/components/top";
-import Header from "@/components/head";
-import Menu from "@/components/menu";
-import Link from "next/link";
+import Header from "@/components/head";  
 
 export default function Player() {
   return (
