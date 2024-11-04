@@ -1,6 +1,6 @@
 
 import AxiosHttpClient from '@/api/axiosHttpClient';
-import type { CreditRequest } from '@/infra/interfacess';
+import   { CreditRequest } from '@/infra/interfacess';
 import { Creditor } from '@/infra/interfacess/creditor';
 
 export class CreditorsService {
@@ -32,6 +32,7 @@ export class CreditorsService {
       return response
 
     } catch (error: any) {
+      console.log(error.message)
       throw new Error("An error ocurred while getting the creditors ");
 
     }
@@ -43,6 +44,7 @@ export class CreditorsService {
       return response
 
     } catch (error: any) {
+      console.log(error.message)
       throw new Error("An error ocurred while getting the creditors ");
 
     }
