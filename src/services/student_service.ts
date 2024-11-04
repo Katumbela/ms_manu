@@ -9,7 +9,7 @@ export class StudentService {
   }
 
 
-  async createStudent(studentData: Partial<Student>, documents: File[]): Promise<Student | any> {
+  async createStudent(studentData: Partial<any>, documents: File[]): Promise<Student | any> {
     const route = `/students`;
 
     // Criar um objeto FormData para enviar os dados e arquivos
@@ -54,7 +54,7 @@ export class StudentService {
     return response;
   }
 
-  
+
   async getStudentByAccountNumber(accountNumber: string): Promise<Student | any> {
     const route = `/students/account/${accountNumber}`;
     const response = await this.httpClient.get<Student>(route);
