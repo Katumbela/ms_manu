@@ -16,8 +16,8 @@ export default function DetailsI() {
   const school_id = school_param.get('school')
   const [schools, setSchools] = useState<School>();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isModalRequisitesOpen, setIsModalRequisitesOpen] = useState(false);
-  const [loadSchools, setLoadSchools] = useState(true)
+  // const [isModalRequisitesOpen, setIsModalRequisitesOpen] = useState(false);
+  // const [loadSchools, setLoadSchools] = useState(true)
 
   useEffect(() => {
     const fetchSchools = async () => {
@@ -25,7 +25,7 @@ export default function DetailsI() {
       const service = new SchoolService();
       const data = await service.getSchoolsById(school_id ? school_id : '');
       setSchools(data);
-      setLoadSchools(false)
+      // setLoadSchools(false)
     };
 
     fetchSchools();
