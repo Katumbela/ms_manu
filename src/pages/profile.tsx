@@ -3,8 +3,8 @@ import candidatura from "@/styles/perfil.module.css";
 import Head from "next/head";
 import Top from "@/components/top";
 import Menu from "@/components/menu";
-import Image from "next/image";
-import PurpleButton from "@/components/buttons";
+import Image from "next/image"; 
+import { users } from "@/utils/image-exporter";
 
 export default function ResultadosBolsas() {
   return (
@@ -20,7 +20,7 @@ export default function ResultadosBolsas() {
       <div className={candidatura.container}>
         <Top information="Perfil" pagina="/services/menu"></Top>
         <div className={candidatura.foto}>
-          <Image src="../../avatars/ana.svg" width={130} height={130} alt="" />
+          <Image src={users.user_default} width={130} height={130} alt="" />
 
           <h2>Ana Correia de Assis Diogo</h2>
         </div>
