@@ -10,7 +10,7 @@ import Top2 from "@/components/top";
 import Header from "@/components/head";
 import Menu from "@/components/menu";
 import CartaoMultischool, { CartaoEstudante } from "@/components/cards";
-import InstituicaoResume, { MultischoolResume } from "@/components/resumeHome";
+import InstituicaoResume  from "@/components/resumeHome";
 import { useAppSelector } from "@/hooks";
 import { selectUser } from "@/store";
 import { StringUtils } from "@/utils";
