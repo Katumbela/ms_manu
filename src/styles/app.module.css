@@ -6,7 +6,7 @@
   align-items: center;
   /* justify-content: center; */
   padding: 20px 0 0 0;
-  background: #8879ad url(../../public/vectors/back.svg) center/cover no-repeat !important;
+  background: #8879ad url(/vectors/back.svg) center/cover no-repeat !important;
 }
 
 .container .top {
