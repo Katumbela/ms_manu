@@ -2,15 +2,9 @@ import Header from "@/components/head";
 import transf from "@/styles/transfer/checkTransfer.module.css";
 import Head from "next/head";
 import Top from "@/components/top";
-import payC from "@/styles/payments/instituicao/confirmacao2.module.css";
 import Menu from "@/components/menu";
 import Image from "next/image";
 import PurpleButton from "@/components/buttons";
-import Link from "next/link";
-import { useAppSelector } from "@/hooks";
-import { BankAccountService } from "@/services/transfer_services";
-import { selectUser } from "@/store";
-import { AlertUtils } from "@/utils";
 import { useEffect, useState } from "react";
 import { Student } from "@/infra/interfacess";
 import { StudentService } from "@/services";
@@ -20,52 +14,52 @@ export default function CheckTransferencia() {
 
   const q = useSearchParams()
   const dest_account = q.get("account")
-  const [loading, setLoading] = useState(false)
+  // const [loading, setLoading] = useState(false)
   const [dest, setDest] = useState<Student | null>(null)
 
-  const student = useAppSelector(selectUser)
-  const account = student?.account
+  // const student = useAppSelector(selectUser)
+  // const account = student?.account
 
 
-  const backAccountService = new BankAccountService()
+  // const backAccountService = new BankAccountService()
   const studentService = new StudentService()
 
-  async function handleTransfer() {
-    setLoading(true)
+  // async function handleTransfer() {
+  //   // setLoading(true)
 
-    if (student && account) {
+  //   if (student && account) {
 
-      try {
+  //     try {
 
-        const response = await backAccountService.transferFunds(account.account_number, dest_account ? dest_account : "", 2)
+  //       const response = await backAccountService.transferFunds(account.account_number, dest_account ? dest_account : "", 2)
 
-        setLoading(false)
-        console.log(response)
-        AlertUtils.success("Credito solicitado com sucesso!")
-        window.location.href = "/success"
+  //       // setLoading(false)
+  //       console.log(response)
+  //       AlertUtils.success("Credito solicitado com sucesso!")
+  //       window.location.href = "/success"
 
-      } catch (error: any) {
-        AlertUtils.error("Ocorreu um erro ao solicitar seu crédito, tente novamente mais tarde!")
+  //     } catch (error: any) {
+  //       AlertUtils.error("Ocorreu um erro ao solicitar seu crédito, tente novamente mais tarde!")
 
-      } finally {
+  //     } finally {
 
-        setLoading(false)
-      }
+  //       // setLoading(false)
+  //     }
 
-    }
-  }
+  //   }
+  // }
 
 
   useEffect(() => {
     async function fetchUser() {
       try {
 
-        const destinoConta = await studentService.getStudentByAccountNumber(dest_account);
+        const destinoConta = await studentService.getStudentByAccountNumber(dest_account ? dest_account: "");
         //console.log(destinoConta);
         setDest(destinoConta);
       }
       catch (error: any) {
-       // console.log(error.message)
+       console.log(error.message)
       }
     }
 
