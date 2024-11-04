@@ -5,7 +5,7 @@
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
-  background-image: url(../../public/vectors/back.svg);
+  background-image: url(/vectors/back.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -47,6 +47,7 @@
   justify-content: flex-start;
   align-items: center;
 }
+
 .container .top .icon {
   width: 50%;
   display: flex;
@@ -67,7 +68,7 @@
   font-size: 1.7rem;
 }
 
-.container .header > p {
+.container .header>p {
   font-weight: 600;
   color: #878787;
 }
