@@ -4,7 +4,8 @@ import Head from "next/head";
 import Top from "@/components/top";
 import Menu from "@/components/menu";
 import Image from "next/image";
-import PurpleButton, { LightButton } from "@/components/buttons";
+import PurpleButton from "@/components/buttons";
+import Button from "@/components/buttons";
 
 
 export default function VerBolsa() {
@@ -55,10 +56,11 @@ export default function VerBolsa() {
             description="Confirmar"
             redirect="candidatura"
           ></PurpleButton>
-          <LightButton
+          <Button
+            variant="light"
             description="Baixar edital"
             redirect=""
-          ></LightButton>
+          ></Button>
         </div>
         <Menu />
       </div>
