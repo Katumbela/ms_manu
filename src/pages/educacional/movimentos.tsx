@@ -4,6 +4,7 @@ import Head from "next/head";
 import Top from "@/components/top";
 import Menu from "@/components/menu";
 import Image from "next/image";
+import { users } from "@/utils/image-exporter";
 
 export default function Movimentos() {
   return (
@@ -21,7 +22,7 @@ export default function Movimentos() {
           <div className={mov.info}>
             <Image
               className={mov.avatar}
-              src={"/avatars/ana.svg"}
+              src={users.user_default}
               alt="ba2ck"
               width={70}
               height={70}
