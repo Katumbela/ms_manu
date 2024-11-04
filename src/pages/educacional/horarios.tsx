@@ -3,8 +3,7 @@ import hor from "@/styles/educacional/horario.module.css";
 import Head from "next/head";
 import Top from "@/components/top";
 import Menu from "@/components/menu";
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"; 
 
 export default function Payments() {
   return (
