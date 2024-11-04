@@ -2,10 +2,10 @@ import Header from "@/components/head";
 import cred from "@/styles/consultas/creditos/confirmCred.module.css";
 import Head from "next/head";
 import Top from "@/components/top";
-import PurpleButton from "@/components/buttons";
-import { LightButton } from "@/components/buttons";
+import PurpleButton from "@/components/buttons"; 
 import Menu from "@/components/menu";
 import Image from "next/image";
+import Button from "@/components/buttons";
 
 export default function ConfirmCredit() {
   return (
@@ -55,10 +55,10 @@ export default function ConfirmCredit() {
             description="Confirmar"
             redirect="success"
           ></PurpleButton>
-          <LightButton
+          <Button
             description="Editar detalhes"
             redirect="infoCredor"
-          ></LightButton>
+          ></Button>
         </div>
         <Menu/>
       </div>
