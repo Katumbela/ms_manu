@@ -2,8 +2,7 @@ import React from "react";
 import menu from "@/styles/menu.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
-import { GiSettingsKnobs } from "react-icons/gi";
+import { useState, useEffect } from "react"; 
 import { AiOutlineCreditCard } from "react-icons/ai";
 import { AiOutlineAppstore } from "react-icons/ai";
 
