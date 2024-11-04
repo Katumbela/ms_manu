@@ -1,6 +1,5 @@
 import login from "../styles/login.module.css";
-import Image from "next/image";
-import PurpleButton from "../components/buttons";
+import Image from "next/image"; 
 import Link from "next/link";
 import { useAppDispatch } from "@/hooks";
 import { routes } from "@/infra";
