@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 import { HttpClient } from './httpClient';
 import { env } from '@/infra';
@@ -7,8 +10,8 @@ class AxiosHttpClient implements HttpClient {
 
   constructor() {
     this.axiosInstance = axios.create({
-      // baseURL: env.apiUrl,
-      baseURL: env.localDb,
+      baseURL: env.apiUrl,
+      // baseURL: env.localDb,
     });
   }
 
