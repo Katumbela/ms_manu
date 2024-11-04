@@ -13,7 +13,7 @@
   height: 45vh;
   flex-direction: column;
   align-items: center;
-  background-image: url(../..//bg/confetti.svg);
+  background-image: url(/bg/confetti.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
