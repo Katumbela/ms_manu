@@ -7,8 +7,75 @@ import Menu from "@/components/menu";
 import Image from "next/image";
 import PurpleButton from "@/components/buttons";
 import Link from "next/link";
+import { useAppSelector } from "@/hooks";
+import { BankAccountService } from "@/services/transfer_services";
+import { selectUser } from "@/store";
+import { AlertUtils } from "@/utils";
+import { useEffect, useState } from "react";
+import { Student } from "@/infra/interfacess";
+import { StudentService } from "@/services";
+import { useSearchParams } from "next/navigation";
 
 export default function CheckTransferencia() {
+
+  const q = useSearchParams()
+  const dest_account = q.get("account")
+  const [loading, setLoading] = useState(false)
+  const [dest, setDest] = useState<Student | null>(null)
+
+  const student = useAppSelector(selectUser)
+  const account = student?.account
+
+
+  const backAccountService = new BankAccountService()
+  const studentService = new StudentService()
+
+  async function handleTransfer() {
+    setLoading(true)
+
+    if (student && account) {
+
+      try {
+
+        const response = await backAccountService.transferFunds(account.account_number, dest_account ? dest_account : "", 2)
+
+        setLoading(false)
+        console.log(response)
+        AlertUtils.success("Credito solicitado com sucesso!")
+        window.location.href = "/success"
+
+      } catch (error: any) {
+        AlertUtils.error("Ocorreu um erro ao solicitar seu crédito, tente novamente mais tarde!")
+
+      } finally {
+
+        setLoading(false)
+      }
+
+    }
+  }
+
+
+  useEffect(() => {
+    async function fetchUser() {
+      try {
+
+        const destinoConta = await studentService.getStudentByAccountNumber(dest_account);
+        //console.log(destinoConta);
+        setDest(destinoConta);
+      }
+      catch (error: any) {
+       // console.log(error.message)
+      }
+    }
+
+    fetchUser();
+
+  }, [dest_account]);
+
+  // console.log(dest_account)
+
+
   return (
     <>
       <div className={transf.container}>
@@ -30,14 +97,15 @@ export default function CheckTransferencia() {
             alt=""
           />
           <p className={transf.name}>
-            Manuel Teodoro de Jesus
+            <center><span className="text-sm">Transferir para:</span></center>
+            {dest?.studentName}
           </p>
         </div>
 
         <div className={transf.info}>
           <div className={transf.items}>
             <p className={transf.dark_g}>Número do cartão</p>
-            <p className={`${transf.primary} ${transf.cardN}`}>043 445 550 0</p>
+            <p className={`${transf.primary} ${transf.cardN}`}>{dest?.account?.card_number}</p>
           </div>
           <div className={transf.items}>
             <p className={transf.dark_g}>Tipo de transferência</p>
