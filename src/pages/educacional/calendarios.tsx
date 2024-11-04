@@ -2,9 +2,7 @@ import Header from "@/components/head";
 import cal from "@/styles/educacional/calendarios.module.css";
 import Head from "next/head";
 import Top from "@/components/top";
-import Menu from "@/components/menu";
-import Image from "next/image";
-import Link from "next/link";
+import Menu from "@/components/menu"; 
 
 export default function Materiais() {
   return (
