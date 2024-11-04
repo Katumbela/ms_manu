@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import cards from "@/styles/cards.module.css";
 import { CartaoEstudante } from "@/components/cards";
+import { users } from "@/utils/image-exporter";
 
 export default function eduultsM() {
   return (
@@ -75,7 +76,7 @@ export default function eduultsM() {
         <div className={edu.info}>
           <Image
             className={edu.avatar}
-            src={"/avatars/ana.svg"}
+            src={users.user_default}
             alt="ba2ck"
             width={70}
             height={70}
