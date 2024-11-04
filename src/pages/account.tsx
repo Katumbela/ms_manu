@@ -2,81 +2,78 @@ import account from "../styles/account.module.css";
 import Image from "next/image";
 import PurpleButton from "@/components/buttons";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
-import { StudentService } from "@/services";
-import { AlertUtils, StringUtils } from "@/utils";
-import { useState } from "react";
+import { StringUtils } from "@/utils"; 
+import { useSearchParams } from "next/navigation";
 
 export default function Documents() {
 
   const matricula = useSearchParams();
-  const school_id = matricula.get('school')
-  const school_name = matricula.get('school_name')
-  const course = matricula.get('chosen_course')
-  const course_id = matricula.get('course')
+  // const school_id = matricula.get('school')
+  // const school_name = matricula.get('school_name')
+  // const course = matricula.get('chosen_course')
+  // const course_id = matricula.get('course')
   const name = matricula.get('name')
-  const pin = matricula.get('pin')
-  const phone = matricula.get('phone')
+  // const pin = matricula.get('pin')
+  // const phone = matricula.get('phone')
 
-  const [documents, setDocuments] = useState<File[]>([]);
-  const [registered, setRegistered] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const navigate = useRouter();
+  // const [documents, setDocuments] = useState<File[]>([]);
+  // const [registered, setRegistered] = useState(false);
+  // const [loading, setLoading] = useState(false); 
 
-  const handleSubmit = async () => {
-    const student = new StudentService();
-    const formData = {
-      registrationNumber: "",
-      studentName: name,
-      class: "",
-      shift: "",
-      phoneNumber: phone,
-      studentEmail: "",
-      course: course,
-      identificationNumber: "",
-      registrationYear: "",
-      password: pin,
-    };
+  // const handleSubmit = async () => {
+  //   const student = new StudentService();
+  //   const formData = {
+  //     registrationNumber: "",
+  //     studentName: name,
+  //     class: "",
+  //     shift: "",
+  //     phoneNumber: phone,
+  //     studentEmail: "",
+  //     course: course,
+  //     identificationNumber: "",
+  //     registrationYear: "",
+  //     password: pin,
+  //   };
 
 
-    if (documents.length === 0) {
-      AlertUtils.error("Por favor, preencha todos os campos obrigatórios e envie os documentos.");
-      return;
-    }
+  //   if (documents.length === 0) {
+  //     AlertUtils.error("Por favor, preencha todos os campos obrigatórios e envie os documentos.");
+  //     return;
+  //   }
 
-    setLoading(true);
-    try {
-      // Primeiro, cria o estudante
-      const studentData = await student.createStudent(formData, documents);
-      if (!studentData) {
-        AlertUtils.error(studentData.statusCode);
-        return;
-      }
+  //   setLoading(true);
+  //   try {
+  //     // Primeiro, cria o estudante
+  //     const studentData = await student.createStudent(formData, documents);
+  //     if (!studentData) {
+  //       AlertUtils.error(studentData.statusCode);
+  //       return;
+  //     }
 
-      // Se a criação do estudante for bem-sucedida, então matricula
-      const enrollData = {
-        studentId: studentData._id,
-        schoolId: school_id,
-        courseId: course_id,
-        enrolledAt: new Date(),
-      };
+  //     // Se a criação do estudante for bem-sucedida, então matricula
+  //     const enrollData = {
+  //       studentId: studentData._id,
+  //       schoolId: school_id,
+  //       courseId: course_id,
+  //       enrolledAt: new Date(),
+  //     };
 
-      await student.enrollStudent(enrollData);
-      console.log(studentData);
-      setRegistered(true);
-    } catch (error: any) {
-      console.log(error.message);
-      AlertUtils.error('Já existe uma conta com este Nº de identificação e email. Por favor, verifique os dados ou faça login.', "top-right");
-    } finally {
-      setLoading(false);
-    }
-  };
+  //     await student.enrollStudent(enrollData);
+  //     console.log(studentData);
+  //     setRegistered(true);
+  //   } catch (error: any) {
+  //     console.log(error.message);
+  //     AlertUtils.error('Já existe uma conta com este Nº de identificação e email. Por favor, verifique os dados ou faça login.', "top-right");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files) {
-      setDocuments(Array.from(event.target.files));
-    }
-  };
+  // const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   if (event.target.files) {
+  //     setDocuments(Array.from(event.target.files));
+  //   }
+  // };
 
 
 
