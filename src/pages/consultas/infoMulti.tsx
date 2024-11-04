@@ -6,8 +6,6 @@ import Top from "@/components/top";
 import cards from "@/styles/cards.module.css";
 import Menu from "@/components/menu";
 import CartaoMultischool from "@/components/cards";
-import Image from "next/image";
-import Link from "next/link";
 import { useAppSelector } from "@/hooks";
 import { selectUser } from "@/store";
 
