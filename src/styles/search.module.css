@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-image: url(../../public/bg/explore.svg); */
+  /* background-image: url(/bg/explore.svg); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
