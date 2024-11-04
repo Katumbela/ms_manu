@@ -14,6 +14,7 @@ import usePeriodicStudentUpdate from "@/hooks/usePeriodicStudentUpdate";
 import { TransactionService } from "@/services";
 import { StringUtils } from '../../utils/string-utils';
 import { DateUtils, NumberUtils } from "@/utils";
+import { users } from "@/utils/image-exporter";
 
 export default function Movimentos() {
 
@@ -64,7 +65,7 @@ export default function Movimentos() {
           <div className={mov.info}>
             <Image
               className={mov.avatar}
-              src={"/avatars/ana.svg"}
+              src={users.user_default}
               alt="ba2ck"
               width={70}
               height={70}
