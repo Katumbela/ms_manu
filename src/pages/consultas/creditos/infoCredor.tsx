@@ -3,8 +3,6 @@ import cred from "@/styles/consultas/creditos/infoCredor.module.css";
 import Head from "next/head";
 import Top from "@/components/top";
 import Menu from "@/components/menu";
-import Image from "next/image";
-import CreditDetails from "@/components/creditRange";
 import Button from "@/components/buttons";
 import { useSearchParams } from "next/navigation";
 import { Creditor } from "@/infra/interfacess";
@@ -28,7 +26,7 @@ export default function InfoCredor() {
   const credor_id = q.get("credor")
   // State to track amount and term
   const [amount, setAmount] = useState(10000); // Default value: 10,000 kz
-  const [term, setTerm] = useState(2); // Default term: 2 months
+  const [term, setTerm] = useState<number>(2); // Default term: 2 months
 
   // Handlers to increase or decrease amount and term
   const handleAmountChange = (e: any) => setAmount(Number(e.target.value));
@@ -63,7 +61,7 @@ export default function InfoCredor() {
 
       try {
 
-        const response = await creditRequestService.createCreditRequest(account.account_number, amount, "Credito estudantil para o estudante " + student.studentName, term, creditor?.code_entity, creditor?._id)
+        const response = await creditRequestService.createCreditRequest(account.account_number, amount, "Credito estudantil para o estudante " + student.studentName, term, creditor?.code_entity ? creditor?.code_entity : 0, creditor?._id)
 
         setLoading(false)
         console.log(response)
@@ -71,6 +69,7 @@ export default function InfoCredor() {
         window.location.href = "/success"
 
       } catch (error: any) {
+        console.log(error.message)
         AlertUtils.error("Ocorreu um erro ao solicitar seu crédito, tente novamente mais tarde!")
 
       } finally {
