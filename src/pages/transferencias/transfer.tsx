@@ -13,6 +13,7 @@ import usePeriodicStudentUpdate from "@/hooks/usePeriodicStudentUpdate";
 import { Transaction } from "@/infra/interfacess";
 import { TransactionService } from "@/services";
 import { useState, useEffect } from "react";
+import { users } from "@/utils/image-exporter";
 
 
 export default function Transfer() {
@@ -48,7 +49,7 @@ export default function Transfer() {
   }, []);
 
 
-
+  console.log(transactions)
   return (
     <>
       <div className={cred.container}>
@@ -63,7 +64,7 @@ export default function Transfer() {
 
         <div className={cred.first}>
           <div className={cred.inner1}>
-            <Image src={"/avatars/ana.svg"} width={80} height={80} alt="" />
+            <Image src={users.user_default} width={80} height={80} alt="" />
             <p>Saldo disponível</p>
             <h1>{NumberUtils.formatCurrency(account?.balance ? account?.balance : 0)}</h1>
           </div>
