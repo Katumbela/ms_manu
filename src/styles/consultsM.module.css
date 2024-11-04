@@ -14,7 +14,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(../../public/bg/Circles2.svg);
+  background-image: url(/bg/Circles2.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
