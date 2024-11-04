@@ -5,10 +5,52 @@ import Top from "@/components/top";
 import payC from "@/styles/payments/instituicao/confirmacao2.module.css";
 import Menu from "@/components/menu";
 import Image from "next/image";
-import PurpleButton from "@/components/buttons";
+import Button from "@/components/buttons";
 import Link from "next/link";
+import { useState } from "react";
+import { BankAccountService } from "@/services/transfer_services";
+import { useAppSelector } from "@/hooks";
+import { selectUser } from "@/store";
+import { AlertUtils } from "@/utils"; 
 
 export default function CheckTransferir() {
+  const [accountNumber, setAccountNumber] = useState("")
+  const [loading, setLoading] = useState(false)
+
+  const student = useAppSelector(selectUser)
+  const account = student?.account
+
+
+  const backAccountService = new BankAccountService()
+
+  async function handleTransfer() {
+    setLoading(true)
+
+    if (student && account) {
+
+      try {
+
+        const response = await backAccountService.transferFunds(account.account_number, amount, "Credito estudantil para o estudante " + student.studentName, term, creditor?.code_entity, creditor?._id)
+
+        setLoading(false)
+        console.log(response)
+        AlertUtils.success("Credito solicitado com sucesso!")
+        window.location.href = "/success"
+
+      } catch (error: any) {
+        AlertUtils.error("Ocorreu um erro ao solicitar seu crédito, tente novamente mais tarde!")
+
+      } finally {
+
+        setLoading(false)
+      }
+
+    }
+
+
+
+  }
+
   return (
     <>
       <div className={transf.container}>
@@ -46,10 +88,10 @@ export default function CheckTransferir() {
         </div>
         <div className={transf.info}>
           <div className={transf.cta}>
-            <PurpleButton
+            <Button
               description="Continuar"
               redirect="checkTransf"
-            ></PurpleButton>
+            ></Button>
             <Link href="transferir">
               <u>Transferir via código QR</u>
             </Link>
