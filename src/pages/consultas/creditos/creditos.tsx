@@ -7,13 +7,14 @@ import Menu from "@/components/menu";
 import Image from "next/image";
 import Link from "next/link";
 import usePeriodicStudentUpdate from "@/hooks/usePeriodicStudentUpdate";
-import { CreditRequest, Transaction } from "@/infra/interfacess";
-import { CreditRequestService, TransactionService } from "@/services";
+import { CreditRequest } from "@/infra/interfacess";
+import { CreditRequestService } from "@/services";
 import { useState, useEffect } from "react";
 import { selectUser } from "@/store";
 import { useAppSelector } from "@/hooks";
-import { DateUtils, NumberUtils, StringUtils } from "@/utils";
+import { DateUtils, NumberUtils } from "@/utils";
 import { getStatusColor } from "@/utils/getStatusColor.utils";
+import { users } from "@/utils/image-exporter";
 
 export default function Credito() {
 
@@ -62,7 +63,7 @@ export default function Credito() {
 
         <div className={cred.first}>
           <div className={cred.inner1}>
-            <Image src={"/avatars/ana.svg"} width={80} height={80} alt="" />
+            <Image src={users.user_default} width={80} height={80} alt="" />
             <p>O seu crédito actual é:</p>
             <h2>{lastCredit ? NumberUtils.formatCurrency(lastCredit.amount) : "Nenhum crédito disponível"}</h2>
             <small>
