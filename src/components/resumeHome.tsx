@@ -1,7 +1,6 @@
 import home from "@/styles/resumeHome.module.css";
 import Link from "next/link";
-import Image from "next/image"; 
-import { Transaction } from "@/infra/interfacess";
+import Image from "next/image";  
 
 export default function InstituicaoResume() {
   return (
@@ -246,10 +245,7 @@ export default function InstituicaoResume() {
     </>
   );
 }
-
-interface MResumeProps {
-  transactions: Transaction[]
-}
+ 
 
 export function MultischoolResume() {
   return (
