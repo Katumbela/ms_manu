@@ -49,7 +49,7 @@ export class StudentService {
   }
 
   async getStudentByAdhesionNumber(adhesionNumber: string): Promise<Student | any> {
-    const route = `/students/8379100`;
+    const route = `/students/${adhesionNumber}`;
     const response = await this.httpClient.get<Student>(route);
     return response;
   }
