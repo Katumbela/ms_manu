@@ -1,0 +1,343 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(/vectors/back.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: border-box;
+  overflow-y: scroll;
+  font-family: "Raleway", sans-serif;
+}
+
+.container .header {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 0 0 0;
+}
+
+.container .header .back {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.container .header .icon {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 0 0 20px;
+}
+
+.container .arts {
+  width: 95%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0 0 0;
+  justify-content: space-between;
+  /* background-color: #878787; */
+}
+
+.container .arts1 {
+  width: 75%;
+  height: 65px;
+  background-color: #6c5f8d88;
+  border-radius: 20px 20px 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.container .inner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .inner .txt {
+  font-size: 0.9rem !important;
+}
+
+.container .inner .number {
+  width: 80px;
+  height: 80%;
+  background-color: #fff;
+  margin: 5px 15px 5px 6px;
+  border-radius: 15px 15px 15px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.container .inner .number1 {
+  color: var(--primary);
+}
+
+.container .inner .txt1 {
+  color: var(--txt-light);
+  font-size: 0.8rem;
+}
+
+.container .arts2 {
+  width: 86%;
+  height: 62px;
+  background-color: #f9d048ba;
+  border-radius: 20px 20px 0px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.container .inner2 {
+  width: 98%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.container .inner2 .number2 {
+  width: 80px;
+  height: 80%;
+  background-color: #fff;
+  margin: 0 4px 0 7px;
+  border-radius: 15px 15px 0px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.7rem;
+  color: #f9d048;
+}
+
+.container .inner2 .txt2 {
+  color: var(--primary);
+  margin: 0 0 0 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.container .inner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .arts3 {
+  width: 80%;
+  height: 65px;
+  background-color: #6c5f8d88;
+  border-radius: 20px 20px 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.number3 {
+  width: 54px;
+  height: 80%;
+  background-color: #fff;
+  margin: 0 20px 0 7px;
+  border-radius: 15px 15px 15px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.container .inner .number3 {
+  color: var(--primary);
+}
+
+.container .inner .txt3 {
+  width: 70%;
+  color: var(--txt-light);
+  font-size: 0.8rem;
+}
+
+.container .desc {
+  width: 85%;
+  height: 48vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0 0 0;
+}
+
+.container .desc > h1 {
+  font-size: 1.6rem;
+  color: var(--primary);
+}
+
+.container .desc .txt {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .desc .txt > p {
+  text-align: justify;
+  color: #878787;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.container .buttoncta {
+  width: 100%;
+  height: 16vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SAMSUNG & XIAOMI */
+@media only screen and (min-width: 360px) and (max-width: 440px) {
+  .container .arts {
+    height: 34vh;
+  }
+
+  .container .desc {
+    height: 33vh;
+  }
+  .txtin {
+    font-size: 0.87rem !important;
+  }
+}
+
+@media only screen and (min-width: 412px) and (max-width: 413px) {
+  .container .arts1 {
+    width: 75%;
+  }
+
+  .container .arts1,
+  .container .arts2,
+  .container .arts3 {
+    height: 78px;
+  }
+
+  .txtin {
+    font-size: 0.97rem !important;
+  }
+
+  .number3 {
+    width: 60px;
+    margin-left: -2px;
+  }
+
+  .number1,
+  .number2,
+  .number3 {
+    font-size: 1.5rem !important;
+  }
+
+  .container .desc > h1 {
+    font-size: 1.8rem;
+    color: var(--primary);
+  }
+
+  .container .desc {
+    height: 32vh;
+  }
+
+  .container .desc p {
+    font-size: 1.12rem !important;
+  }
+
+  .container .button {
+    font-size: 1.1rem !important;
+  }
+}
+
+/* IPHONE 6/7/8 & X/11/12 */
+@media only screen and (min-width: 375px) and (max-width: 440px) {
+  .container .arts {
+    height: 36vh;
+  }
+
+  .txtin {
+    font-size: 0.9rem !important;
+  }
+
+   .container .desc {
+    height: 37vh;
+  }
+
+}
+
+
+/* IPHONE 6/7/8 PLUS & LARGER PHONES */
+@media only screen and (min-width: 414px) and (max-width: 780px) {
+  .container .arts {
+    height: 38vh;
+  }
+
+  .container .arts1,
+  .container .arts2,
+  .container .arts3 {
+    height: 78px;
+  }
+
+  .txtin {
+    font-size: 0.92rem !important;
+  }
+
+  .number3 {
+    width: 60px;
+    margin-left: -2px;
+  }
+
+  .container .desc {
+    height: 35vh;
+  }
+
+  .container .desc p {
+    font-size: 1.1rem !important;
+  }
+
+  .container .button {
+    font-size: 1.1rem !important;
+  }
+}
+
+/* LARGER DEVICES - TABLETS */
+@media only screen and (min-width: 768px) and (max-width: 834px) {
+}
+
+/* MIN HEIGHT FOR LARGE SCREENS */
+/* @media only screen and (min-height: 812px) {
+  .container .arts1,
+  .container .arts2,
+  .container .arts3 {
+    height: 70px;
+  }
+
+  .number1,
+  .number2,
+  .number3 {
+    font-size: 1.5rem !important;
+  }
+
+  .txtin {
+    font-size: 0.94rem !important;
+  }
+
+  .container .desc {
+    height: 30vh;
+  }
+} */
