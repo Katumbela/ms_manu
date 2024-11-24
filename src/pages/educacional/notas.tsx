@@ -2,6 +2,8 @@ import hor from "@/styles/educacional/notas.module.css";
 import Top from "@/components/top";
 import Menu from "@/components/menu";
 import Image from "next/image";
+import { useAppSelector } from "@/hooks";
+import { selectUser } from "@/store";
 
 // Função para limitar o nome da cadeira a 12 caracteres
 const truncateName = (name: string): string =>
@@ -33,15 +35,16 @@ const subjects = [
 ];
 
 export default function Payments() {
+	const student = useAppSelector(selectUser);
   return (
     <div className={hor.container}>
       <Top information="Notas" pagina="curso" />
       <div className={hor.top}>
-        <p>EINF6-M1 - Engenharia Informática</p>
+        <p>EINF6-M1 - {student?.enrollments?.[0].course.name}</p>
       </div>
 
       <div className={hor.day}>
-        <p className={hor.title}>VIº Semestre - 3º ano</p>
+        <p className={hor.title}>VIº Semestre - {student?.enrollments?.[0].course.disciplines?.[0].year.year_number}º ano</p>
         <div className={hor.top}>
           <div className={hor.both}>
             <p>Data</p>
