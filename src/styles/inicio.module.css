@@ -1,0 +1,79 @@
+.carouselContainer {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  margin: 40px 0 0px 0 !important;
+}
+
+.cardWrapper {
+  min-width: 100%;
+  display: flex;
+}
+
+.activeCard {
+  transform: scale(1.14);
+  margin: 0 20px 0 30px;
+}
+
+.cards {
+  width: 96%;
+  /* max-height: 37vh; */
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  /* margin: 40px 0 50px 0; */
+  justify-content: space-between;
+}
+
+.card_m .corpo {
+  width: 87%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card_m .corpo .c_number {
+  height: 40px;
+  font-family: "Montserrat";
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.card_m .corpo .amount {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-family: "Inconsolata";
+  color: #fff;
+  font-weight: 100;
+}
+
+.card_m .bottom {
+  width: 87%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card_m .bottom p {
+  font-weight: 700;
+  font-family: "Raleway";
+  color: #fff;
+}
+
+.resume {
+  width: 100%;
+  /* height: 43vh; */ 
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  margin: 0px 0 0 0;
+}
