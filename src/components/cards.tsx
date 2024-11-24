@@ -5,10 +5,11 @@ import { useAppSelector } from "@/hooks";
 import { selectUser } from "@/store";
 import { NumberUtils, StringUtils } from "@/utils";
 import QRCode from "react-qr-code";
+import { users } from "@/utils/image-exporter";
 
 export default function CartaoMultischool() {
-  const student = useAppSelector(selectUser);
-  const account = student?.account;
+  const studentt = useAppSelector(selectUser);
+  const account = studentt?.account;
 console.log(account)
 
 
@@ -39,8 +40,8 @@ console.log(account)
       <div className={styles.bottom}>
         <p>
           {StringUtils.getFirstAndLastWord(
-            student?.studentName
-              ? student?.studentName
+            studentt?.studentName
+              ? studentt?.studentName
               : "Ana Correia de Assis Diogo"
           )}
         </p>
@@ -72,15 +73,13 @@ export function CartaoEstudante({
   color: string;
 }) {
   const gradiente = `linear-gradient(to left bottom, #535353, ${color})`;
+ 
 
+  
+  const studentt = useAppSelector(selectUser);
+  // const account = studentt?.account;
   // GERAR QR CODE PARA O CARTÃO DE ESTUDANTE
-  const qrData = JSON.stringify({
-    name: student.name,
-    course: student.course,
-    registrationNumber: student.registrationNumber,
-    classGroup: student.classGroup,
-    institution: student.institution,
-  });
+  const qrData = JSON.stringify(student);
 
   return (
     <Link
@@ -93,7 +92,7 @@ export function CartaoEstudante({
       <div className={styles.top}>
         <div className={styles.icon}>
           <Image
-            src={`/img/${student.logo}`}
+            src={studentt?.enrollments?.[0].school.school_logo || ""}
             alt="Logo da instituição"
             width={45}
             height={45}
@@ -102,13 +101,13 @@ export function CartaoEstudante({
           />
         </div>
         <div className={styles.inst}>
-          <p>{student.institution || "Instituição indisponível"}</p>
+          <p>{studentt?.enrollments?.[0].school.schoolName || "Instituição indisponível"}</p>
         </div>
       </div>
       <div className={styles.corpo}>
         <div className={styles.ft}>
           <Image
-            src={`/img/${student.avatar}`}
+            src={users.user_default}
             alt="avatar do estudante"
             width={67}
             height={95}
@@ -119,13 +118,13 @@ export function CartaoEstudante({
         <div className={styles.info}>
           <ul>
             <li>
-              <b>Nome:</b> {student.name || "Nome indisponível"}
+              <b>Nome:</b> {studentt?.studentName || "Nome indisponível"}
             </li>
             <li>
-              <b>Curso:</b> {student.course || "Curso indisponível"}
+              <b>Curso:</b> {studentt?.enrollments?.[0].course.name || "Curso indisponível"}
             </li>
             <li>
-              <b>Nº matrícula:</b> {student.registrationNumber || "N/A"}
+              <b>Nº matrícula:</b> {studentt?.adhesionNumber || "N/A"}
             </li>
             <li>
               <b>Turma:</b> {student.classGroup || "Turma indisponível"}
