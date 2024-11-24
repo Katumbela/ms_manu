@@ -1,0 +1,467 @@
+.container {
+  width: 100%;
+  min-height: 110vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+}
+
+.container2 {
+  min-height: 127vh;
+}
+
+.top {
+  width: 94%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 20px 0 0 0;
+}
+
+.top .icon {
+  width: 10%;
+  display: flex;
+  border-radius: 30px;
+  align-items: center;
+}
+
+.top p {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "raleway";
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.top .menu {
+  width: 15%;
+  height: 20%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.top .menu .inner {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  flex-direction: column;
+  background-color: #eaeaea;
+  align-items: center;
+  border-radius: 30px;
+  justify-content: center;
+}
+
+.top .menu .inner > i {
+  font-size: 1.2rem;
+}
+
+.container .cards {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container .cards2 {
+  width: 90% !important;
+  margin: 30px 0 0 0;
+}
+
+.container .card {
+  width: 96%;
+  height: 90%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 30px 0;
+  box-shadow: 5px 4px 4.3px 0px rgba(0, 0, 0, 0.25);
+}
+
+.container .card_m {
+  background: linear-gradient(to top right, #c5a4db, #535353);
+}
+
+.container .cards .card_m .top {
+  width: 92%;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.container .cards .card_m .top .inner {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .cards .card_m .top .inner .image1 {
+  width: 70%;
+}
+
+.container .cards .card_m .top .inner .image2 {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container .cards .card_m .top .inner .image1 .mslogo {
+  width: 100%;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  background-image: url(/img/cards.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container .cards .card_m .top .inner .image2 .nfc {
+  width: 70%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  background-image: url(/img/nfc.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container .cards .card_m .corpo {
+  width: 87%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px 0 0 0;
+}
+
+.container .cards .card_m .corpo .c_number {
+  height: 20px;
+  font-family: "Montserrat";
+  font-weight: 100;
+  color: #fff;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+
+.container .cards .card_m .corpo .amount {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-family: "Inconsolata";
+  color: #fff;
+  font-weight: 500;
+  margin: 10px 0 0 0;
+}
+
+.container .cards .card_m .bottom {
+  width: 87%;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0 30px 0;
+}
+
+.container .cards .card_m .bottom p {
+  font-weight: 700;
+  font-family: "Raleway";
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+/* CARTÃO ESTUDANTE */
+.container .cards .card_e .top {
+  width: 92%;
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 0 10px 0;
+}
+
+.container .cards .card_e .top .icon {
+  width: 15%;
+}
+
+.container .cards .card_e .top .inst {
+  width: 82%;
+}
+
+.container .cards .card_e .top .inst > p {
+  width: 100%;
+  font-size: 0.8rem;
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.container .cards .card_e .corpo {
+  width: 90%;
+  height: 8.4vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0 0 0;
+}
+
+.container .cards .card_e .corpo .ft {
+  margin: 0 -25px 0 0;
+}
+
+.container .cards .card_e .corpo .info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 0 0 40px;
+}
+
+.container .cards .card_e .corpo .info ul {
+  list-style: none;
+}
+
+.container .cards .card_e .corpo .info ul li {
+  color: #fff;
+  font-family: "Orkney";
+  font-weight: 100;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.container .cards .card_e .bottom {
+  width: 90%;
+  max-height: 6vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.container .cards .card_e .bottom .img {
+  align-items: center;
+  margin: 20px 0 0 -8px;
+}
+
+/* CARTÃO ESTAGIÁRIO */
+.container .cards .card_est .top {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.container .cards .card_est .top .gp {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  justify-content: space-between;
+  padding: 0 0 0 20px;
+}
+
+.container .cards .card_est .top .desc {
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+  font-family: "Anta";
+  color: #fff;
+  /* font-weight: 400; */
+}
+
+.container .cards .card_est .top .desc > p {
+  font-size: 0.7rem;
+  font-weight: 100;
+}
+
+.container .cards .card_est .top .gp .icon {
+  width: 15%;
+}
+
+.container .cards .card_est .top .gp .inst {
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container .cards .card_est .top .inst > p {
+  width: 100%;
+  font-size: 0.8rem;
+  color: #fff;
+  font-weight: 600;
+  padding: 0 0 0 10px;
+}
+
+.container .cards .card_est .corpo {
+  width: 90%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: #fff; */
+  margin: 15px 0 0 0;
+}
+
+.container .cards .card_est .corpo .ft {
+  width: 35%;
+  margin: 0 -25px 0 0;
+}
+
+.container .cards .card_est .corpo .info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 0 0 40px;
+}
+
+.container .cards .card_est .corpo .info ul {
+  list-style: none;
+}
+
+.container .cards .card_est .corpo .info ul li {
+  color: #fff;
+  font-family: "Orkney";
+  font-weight: 100;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.container .cards .card_est .bottom {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container .cards .card_est .bottom .img {
+  align-items: center;
+  margin: 10px 0 0 -8px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+}
+
+@media only screen and (min-width: 360px) and (max-width: 780px) {
+  .top p {
+    font-size: 1.3rem;
+  }
+
+  .top .menu .inner > i {
+    font-size: 1.5rem;
+  }
+}
+
+/* IPHONE 5 & SE */
+@media only screen and (max-width: 320px) {
+  .container2 {
+    min-height: 170vh;
+  }
+
+  /* CARTÃO ESTUDANTE */
+  .container .cards .card_e .top {
+    width: 90%;
+    height: 45px;
+  }
+
+  .container .cards .card_e .top .logoI {
+    width: 40px;
+  }
+
+  .container .cards .card_e .top .icon {
+    width: 15%;
+  }
+
+  .container .cards .card_e .top .inst {
+    width: 80%;
+  }
+
+  .container .cards .card_e .top .inst > p {
+    font-size: 0.65rem;
+  }
+
+  .container .cards .card_e .top .inst .avatarStudent {
+  }
+
+  .container .cards .card_e .corpo .ft {
+    margin: 0 -25px 0 0;
+  }
+
+  .container .cards .card_e .corpo .info ul li {
+    color: #fff;
+    font-family: "Orkney";
+    font-weight: 100;
+    font-size: 0.7rem;
+    line-height: 1.5;
+  }
+
+  .container .cards .card_e .bottom {
+    margin-top: 15px;
+  }
+
+  .container .cards .card_e .bottom .logoM {
+    width: 190px;
+  }
+
+  .container .cards .card_e .bottom .qrcode {
+    width: 50px;
+    align-items: center;
+    background-color: #535353;
+  }
+
+  /* CARTÃO ESTAGIÁRIO */
+  .container .cards .card_e .top {
+    width: 90%;
+    height: 45px;
+  }
+
+  .container .cards .card_est .top .logoI {
+    width: 40px;
+  }
+
+  .container .cards .card_est .top .icon {
+    width: 15%;
+  }
+
+  .container .cards .card_est .top .inst {
+    width: 80%;
+  }
+
+  .container .cards .card_est .top .inst > p {
+    font-size: 0.65rem;
+  }
+
+  .container .cards .card_est .corpo .ft {
+    align-self: center;
+  }
+
+  .container .cards .card_est .corpo .info ul li {
+    color: #fff;
+    font-family: "Orkney";
+    font-weight: 100;
+    font-size: 0.7rem;
+    line-height: 1.5;
+  }
+
+  .container .cards .card_est .bottom {
+    margin-top: 15px;
+  }
+
+  .container .cards .card_est .bottom .logoM {
+    width: 190px;
+  }
+
+  .container .cards .card_est .bottom .qrcode {
+    width: 50px;
+    align-items: center;
+    background-color: #535353;
+  }
+}
