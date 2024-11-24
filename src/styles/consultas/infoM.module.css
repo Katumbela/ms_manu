@@ -1,0 +1,44 @@
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+.info {
+  width: 90%;
+  height: 50vh;
+  background-color: #f3f0f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: -40px 0 0 0;
+  border-radius: 10px;
+  font-family: "Montserrat";
+}
+
+.pad {
+  width: 90% !important;
+  margin: 20px 0 30px 0;
+}
+
+.info .items {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+.dark_g {
+  color: #9eabc4;
+}
+
+.primary {
+  color: var(--primary);
+}
+
+.success {
+  color: #0ebc29;
+  font-family: "Montserrat";
+}
