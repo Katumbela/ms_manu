@@ -1,0 +1,134 @@
+.menuLateral {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 69%;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(92, 92, 92, 0.5);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 9999999999;
+  overflow-y: scroll;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.open {
+  transform: translateX(0);
+}
+
+.closed {
+  transform: translateX(-100%);
+}
+
+.menuLateral ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menuLateral li {
+  padding: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.menuLateral li:hover {
+  background-color: #000;
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+}
+
+.container .first {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container .logo {
+  margin: 20px 0 20px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .first > ul {
+  width: 90%;
+  padding: 0 0 0 20px;
+}
+.container .first > ul > li {
+  background: #f2f2f2;
+  margin: 20px 0 0 0;
+  font-family: "Raleway";
+  color: #6a6868;
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+}
+c
+.item {
+  width: 100%;
+}
+
+.container .first > ul > li .item > p {
+  font-size: 0.86rem;
+  width: 90%;
+  padding: 0 0 0 10px;
+}
+
+.container .bottom {
+  width: 100%;
+  background: var(--primary);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  margin: 50px 0 0 0;
+}
+
+/* IPHONE 5 & SE */
+@media only screen and (max-width: 320px) {
+  .container .logo {
+    margin: 10px 0 10px 0;
+  }
+
+  .container .bottom {
+    margin: 50px 0 0 0;
+  }
+}
