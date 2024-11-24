@@ -18,7 +18,7 @@ export default function CodigoConfirmacao() {
       return () => clearTimeout(timer);
     } else {
       setResendAvailable(true);
-    }
+    } 
   }, [timeLeft]);
 
   const formatTime = (seconds: number) => {
