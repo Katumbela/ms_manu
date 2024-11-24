@@ -7,6 +7,7 @@ import type { Grade } from "./grade";
 export interface Student {
   id?: string;
   adhesionNumber?: string;
+  profile_pic?: string;
   registrationNumber?: string;
   studentName: string;
   class?: string;
