@@ -1,0 +1,354 @@
+/* @import 'breakpoints.scss'; */
+
+/* FONTS */
+/* =========== RALEWAY ===========*/
+@font-face {
+  font-family: "Raleway";
+  src: url("/fonts/raleway-thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("/fonts/raleway-extralight.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("/fonts/raleway-light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("/fonts/raleway-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("/fonts/raleway-medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("/fonts/raleway-semibold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* @font-face {
+  font-family: "Raleway";
+  src: url("/fonts/raleway-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+} */
+
+@font-face {
+  font-family: "Raleway";
+  src: url("/fonts/raleway-extraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+/* =========== MONTSERRAT ===========*/
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/montserrat-regular.woff2") format("woff2"),
+    url("/fonts/montserrat-regular.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/montserrat-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/montserrat-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/montserrat-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/montserrat-800.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/montserrat-900.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* =========== INTER ===========*/
+@font-face {
+  font-family: "Inter";
+    src: url("/fonts/inter-100.woff2") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+    src: url("/fonts/inter-200.woff2") format("woff");
+  font-weight: 200;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "Inter";
+    src: url("/fonts/inter-300.woff2") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+    src: url("/fonts/inter-500.woff2") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+    src: url("/fonts/inter-600.woff2") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+    src: url("/fonts/inter-700.woff2") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+    src: url("/fonts/inter-800.woff2") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+    src: url("/fonts/inter-regular.woff2") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* =========== ANTA ===========*/
+@font-face {
+  font-family: "anta";
+  src: url("/fonts/anta-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* =========== ORKNEY ===========*/
+@font-face {
+  font-family: "orkney";
+  src: url("/fonts/orkney-regular.woff2") format("woff");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "orkney";
+  src: url("/fonts/orkney-light.woff2") format("woff");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "orkney";
+  src: url("/fonts/orkney-medium.woff2") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "orkney";
+  src: url("/fonts/orkney-bold.woff2") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+
+
+
+/* =========== INCONSOLATA ===========*/
+@font-face {
+  font-family: "Inconsolata";
+  src: url("/fonts/Inconsolata-300.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+ @font-face {
+  font-family: "Inconsolata";
+  src: url("/fonts/Inconsolata-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inconsolata";
+  src: url("/fonts/Inconsolata-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inconsolata";
+  src: url("/fonts/Inconsolata-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inconsolata";
+  src: url("/fonts/Inconsolata-800.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inconsolata";
+  src: url("/fonts/Inconsolata-900.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* =========== POPPINS ===========*/
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-200.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-300.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-800.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-900.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+} 
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #6c5f8d;
+  --secondary: #c5a4db;
+  --accent-yellow: #f9d048;
+  --txt-light: #ffffff;
+}
+
+.danger {
+  color: #ec4242;
+}
+
+.success {
+  color: #65b228;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+/* @media (prefers-color-scheme: light) {
+  :root {
+    --background: #f7f7f7;
+    --foreground: #ededed;
+  }
+} */
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
