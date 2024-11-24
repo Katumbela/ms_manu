@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 import AxiosHttpClient from '@/api/axiosHttpClient';
 import type { School } from '@/infra/interfacess';
@@ -15,16 +16,17 @@ export class SchoolService {
     const response = await this.httpClient.get<School[]>(route);
     return response;
   }
-  async getSchoolsByType(type: string): Promise<School[]> {
+  async getSchoolsByType(type: string): Promise<any[]> {
     //const route = `/api/schools?schoolType=${schoolType}`;
-    const route = `/schools/type/${type}`;
-    const response = await this.httpClient.get<School[]>(route);
-    return response;
+    // const route = `/schools/type/${type}`;
+    const route = `/schools`;
+    const response: any = await this.httpClient.get(route);
+    return response.data;
   }
-  async getSchoolsById(id: string): Promise<School> {
+  async getSchoolsById(id: string): Promise<any> {
     //const route = `/api/schools?schoolType=${schoolType}`;
     const route = `/schools/${id}`;
-    const response = await this.httpClient.get<School>(route);
-    return response;
+    const response: any = await this.httpClient.get(route);
+    return response.data;
   }
 }

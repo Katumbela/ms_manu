@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../store'
 import type { Student } from '@/infra/interfacess'
-import { routes } from '@/infra' 
+// import { routes } from '@/infra' 
 export interface AuthState {
   access_token: string | null
   isAuthenticated: boolean

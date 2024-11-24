@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import details from "../styles/detailsI.module.css";
 import Image from "next/image";
 import Button from "@/components/buttons";
@@ -16,16 +17,16 @@ export default function DetailsI() {
   const school_id = school_param.get('school')
   const [schools, setSchools] = useState<School>();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  // const [isModalRequisitesOpen, setIsModalRequisitesOpen] = useState(false);
-  // const [loadSchools, setLoadSchools] = useState(true)
-
+  const [isModalRequisitesOpen, setIsModalRequisitesOpen] = useState(false);
+  const [loadSchools, setLoadSchools] = useState(true)
+console.log(school_id)
   useEffect(() => {
     const fetchSchools = async () => {
 
       const service = new SchoolService();
-      const data = await service.getSchoolsById(school_id ? school_id : '');
+      const data = await service.getSchoolsById(school_id ?? '');
       setSchools(data);
-      // setLoadSchools(false)
+      setLoadSchools(false)
     };
 
     fetchSchools();
@@ -33,7 +34,7 @@ export default function DetailsI() {
 
   const navigate = useRouter()
 
-
+// console.log(schools?.courses)
   return (
     <>
       <div className={details.container}>
@@ -84,7 +85,7 @@ export default function DetailsI() {
           </div>
           <p>
             <span className={`${details.nstudents} ${details.purple}`}>
-              {schools?.enrollments.length} estudantes
+              {schools?.enrollments?.length} estudantes
             </span>{" "}
             - Actualmente
           </p>
@@ -109,13 +110,13 @@ export default function DetailsI() {
             <h2> Escolha o curso</h2>
             <br />
             <ul>
-              {
+              {/* {
                 schools?.courses.map((course, index) => (
                   <li onClick={() => { navigate.push(`${routes.REGISTER_ROUTE}?school=${school_id}&school_name=${schools.schoolName}&chosen_course=${course.name}&course=${course.id}`) }} key={index} className='px-5 py-3 my-4 transition-all border-2 cursor-pointer hover:bg-primary/10 hover:font-bold active:text-white active:bg-primary active border-primary rounded-2xl'>
                     {course.name}
                   </li>
                 ))
-              }
+              } */}
             </ul>
           </Modal>
 

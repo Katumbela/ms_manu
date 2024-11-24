@@ -20,13 +20,17 @@ export default function SearchI() {
   useEffect(() => {
     const fetchSchools = async () => {
       const service = new SchoolService();
-      const data = await service.getSchoolsByType(query ? query : "iem");
-      setSchools(data);
+      const data: any = await service.getSchoolsByType(query ? query : "iem");
+      setSchools(data.data);
+      setFilteredSchools(data.data)
       setLoadSchools(false);
     };
-
     fetchSchools();
   }, [query]);
+
+
+console.log(schools)
+
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const term = e.target.value.toLowerCase();
