@@ -14,3 +14,4 @@ export const loginService = async (adhesion: string, password: string): Promise<
   const response: AuthState = await httpClient.post(route, authDatas)
   return response
 }
+ 
