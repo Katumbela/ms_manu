@@ -1,0 +1,149 @@
+.container {
+  width: 100%;
+  height: 102vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #3c3451;
+  color: #fff;
+  overflow-y: scroll;
+}
+
+.container .top {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 40px 0 0 0;
+  overflow-x: scroll;
+}
+
+.container .top .desc {
+  width: 20%;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px 0 50px;
+}
+
+.container .top .desc .photo {
+  width: 75px;
+  height: 75px;
+  border: 2px solid #1c85a6;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .top .desc .photo .in {
+  width: 65px;
+  height: 65px;
+  background-image: url(/avatars/manuel.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50px;
+}
+
+.container .banner {
+  width: 90%;
+  height: 240px;
+  background-image: url(/bg/aulas/aulas.svg);
+  margin: 50px 0 0 0;
+  border-radius: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  font-family: "inter";
+}
+
+.container .banner .in {
+  width: 60%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container .banner .in > h2 {
+  font-family: "poppins";
+  font-weight: 600;
+}
+
+.container .banner .in .in2 {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  letter-spacing: 1.2px;
+}
+
+.container .recents {
+  margin: 40px 0 0 0;
+  width: 90%;
+  height: 30vh;
+  overflow-y: scroll;
+
+  /* padding: 7px; */
+}
+
+.container .recents .content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 0 0;
+
+}
+
+.container .recents .content .back {
+  width: 167px;
+  height: 130px;
+  border-radius: 20px;
+  background: #fff;
+  background-image: url(/bg/aulas/coverRecents.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container .recents .content .desc{
+  width: 50%;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container .recents .content .desc .cadeiraDet{
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container .recents .content .desc .videoR{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 0 0 0;
+}
+
+.prof{
+  color: #ababab;
+}
+
+.videoR{
+  color: #dcdcdc;
+}
