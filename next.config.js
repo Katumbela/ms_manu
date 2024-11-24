@@ -3,8 +3,8 @@ module.exports = {
     return [
       {
         source: '/api/:path*',
-        // destination: 'https://multischooll-api-nest.vercel.app/:path*',
-        destination: 'http://localhost:3500/:path*',
+        destination: 'https://multischooll-api-nest.vercel.app/:path*',
+        // destination: 'http://localhost:3500/:path*',
       },
     ];
   },
