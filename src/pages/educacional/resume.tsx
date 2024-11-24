@@ -55,7 +55,7 @@ const options = [
 export default function EduultsM() {
   
   const student = useAppSelector(selectUser);
-  const account = student?.account;
+  // const account = student?.account;
 
 	const colorI = '#f9d048';
 
@@ -100,8 +100,8 @@ export default function EduultsM() {
 						priority
 					/>
 					<div className={edu.inner}>
-						<p className={edu.name}>{studentInfo.name}</p>
-						<p className={edu.desc}>{`${studentInfo.course} - 3º Ano`}</p>
+						<p className={edu.name}>{student?.studentName}</p>
+						<p className={edu.desc}>{`${student?.enrollments?.[0].course.name} - ${student?.enrollments?.[0].course.disciplines?.[0].year.year_number} Ano`}</p>
 					</div>
 				</div>
 
