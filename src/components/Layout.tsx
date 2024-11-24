@@ -1,4 +1,4 @@
-// Layout.tsx
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import Head from "next/head";
 import React from "react";
 import { LayoutPropsP } from "@/types/LayoutProps";

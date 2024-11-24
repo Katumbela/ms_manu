@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 import menu from "@/styles/menu.module.css";
 import Link from "next/link";
@@ -27,7 +28,7 @@ export default function Menu() {
       (item) => item.href === currentPath
     );
     setActiveIndex(currentIndex !== -1 ? currentIndex : 0);
-  }, [router.pathname]);
+  }, [router.pathname, menuItems]);
 
   return (
     <div className={menu.menu_f}>

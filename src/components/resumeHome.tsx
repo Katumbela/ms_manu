@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import home from "@/styles/resumeHome.module.css";
 import Link from "next/link";
 import Image from "next/image";

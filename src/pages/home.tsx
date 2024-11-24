@@ -34,9 +34,9 @@ export default function Home() {
   const TransactsService = new TransactionService();
 
   async function getTransacts() {
-    if (student?.account?.id) {
+    if (student?.account) {
       const datas = await TransactsService.getTransactionsByAccount(
-        student.account.id
+        student.account.account_number
       );
       return datas;
     }
@@ -52,7 +52,7 @@ export default function Home() {
 
     fetchTransactions();
     console.log(student); // Adicione este log para verificar o estado do usuário
-  }, []);
+  }, [getTransacts, student]);
 
   const color = "#f9d048";
 

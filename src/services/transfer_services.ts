@@ -1,9 +1,9 @@
-import AxiosHttpClient from '@/api/axiosHttpClient'; 
+import AxiosHttpClient from '@/api/axiosHttpClient';
 
 export class BankAccountService {
 
   private httpClient: AxiosHttpClient;
-  private readonly bankAccountUrl = "/account"
+  private readonly bankAccountUrl = "/accounts"
 
 
   constructor() {
@@ -11,9 +11,9 @@ export class BankAccountService {
   }
 
   async transferFunds(fromAccount: string, toAccount: string, amount: number): Promise<any> {
- 
+
     try {
-      const response = await this.httpClient.post(this.bankAccountUrl, {
+      const response = await this.httpClient.post(this.bankAccountUrl + "/transfer", {
         fromAccountNumber: fromAccount,
         toAccountNumber: toAccount,
         amount: amount
@@ -25,5 +25,5 @@ export class BankAccountService {
       throw error;
     }
   }
- 
+
 }

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import styles from "@/styles/cards.module.css";
 import Link from "next/link";
 import Image from "next/image";

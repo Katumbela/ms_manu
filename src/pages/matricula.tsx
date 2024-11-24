@@ -9,7 +9,6 @@ import Layout from "@/components/Layout";
 
 export default function Account() {
   const [name, setName] = useState("");
-  const [number, setNumber] = useState("");
   const [pin, setPin] = useState("");
   const matricula = useSearchParams();
   const school_id = matricula.get("school");
@@ -17,6 +16,7 @@ export default function Account() {
   const course = matricula.get("chosen_course");
   const course_id = matricula.get("course");
   const [passwordVisible, setPasswordVisible] = useState(false);
+  const [numberPhone, setNumber] = useState("");
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
@@ -95,8 +95,9 @@ export default function Account() {
               <span className={matr.phoneCode}>+244</span>
             </div>
             <input
-              type="tel"
-              placeholder="Número de telefone"
+              value={numberPhone}
+              onChange={(e) => setNumber(e.target.value)}
+              placeholder="Número de telefone" 
               className={matr.phoneInput}
             />
           </div>
@@ -187,7 +188,7 @@ export default function Account() {
           <Button
             className={matr.button}
             description="Continuar"
-            redirect={`${routes.REGISTER_ROUTE}?school=${school_id}&school_name=${school_name}&chosen_course=${course}&course=${course_id}&name=${name}&pin=${pin}&phone=${number}`}
+            redirect={`${routes.REGISTER_ROUTE}?school=${school_id}&school_name=${school_name}&chosen_course=${course}&course=${course_id}&name=${name}&pin=${pin}&phone=${numberPhone}`}
           />
         </div>
       </div>

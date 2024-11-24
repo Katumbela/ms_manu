@@ -46,7 +46,7 @@ export default function Credito() {
     }
 
     fetchTransactions();
-  }, []);
+  }, [getCredits]);
 
   const lastCredit = myCredits[myCredits.length - 1];
 

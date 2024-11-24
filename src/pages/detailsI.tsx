@@ -29,7 +29,7 @@ export default function DetailsI() {
     };
 
     fetchSchools();
-  }, []);
+  }, [school_id]);
 
   const navigate = useRouter()
 
@@ -111,8 +111,8 @@ export default function DetailsI() {
             <ul>
               {
                 schools?.courses.map((course, index) => (
-                  <li onClick={() => { navigate.push(`${routes.REGISTER_ROUTE}?school=${school_id}&school_name=${schools.schoolName}&chosen_course=${course.course_name}&course=${course.id}`) }} key={index} className='px-5 py-3 my-4 transition-all border-2 cursor-pointer hover:bg-primary/10 hover:font-bold active:text-white active:bg-primary active border-primary rounded-2xl'>
-                    {course.course_name}
+                  <li onClick={() => { navigate.push(`${routes.REGISTER_ROUTE}?school=${school_id}&school_name=${schools.schoolName}&chosen_course=${course.name}&course=${course.id}`) }} key={index} className='px-5 py-3 my-4 transition-all border-2 cursor-pointer hover:bg-primary/10 hover:font-bold active:text-white active:bg-primary active border-primary rounded-2xl'>
+                    {course.name}
                   </li>
                 ))
               }

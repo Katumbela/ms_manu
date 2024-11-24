@@ -49,7 +49,7 @@ export default function InfoCredor() {
       setCreditor(data);
     }
     GetCreditor();
-  }, []);
+  }, [creditService, credor_id]);
 
   const creditRequestService = new CreditRequestService();
 

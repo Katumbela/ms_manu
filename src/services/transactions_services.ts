@@ -36,7 +36,7 @@ export class TransactionService {
   // Função para obter transações por accountId
   async getTransactionsByAccount(accountId: string | any): Promise<Transaction[]> {
     try {
-      const response = await this.httpClient.get<Transaction[]>(`${this.transactionsUrl}/${accountId}`);
+      const response = await this.httpClient.get<Transaction[]>(`accounts/${accountId}/transactions`);
       return response;
     } catch (error) {
       console.error(`Error fetching transactions for account ${accountId}`, error);

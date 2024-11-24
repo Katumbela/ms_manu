@@ -57,8 +57,8 @@ export class StudentService {
 
   async getStudentByAccountNumber(accountNumber: string): Promise<Student | any> {
     const route = `/students/account/${accountNumber}`;
-    const response = await this.httpClient.get<Student>(route);
-    return response;
+    const response = await this.httpClient.get<any>(route);
+    return response.data;
   }
 
   async updateStudent(id: string, studentData: Partial<Student>): Promise<Student | any> {

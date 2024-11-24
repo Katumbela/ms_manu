@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect } from "react";
 import { FaMoneyBillWave } from "react-icons/fa";
-import { NumberUtils } from "@/utils";
+import { AbreviateString, NumberUtils, StringUtils } from "@/utils";
 import { routes } from "@/infra";
 import Link from "next/link";
 import type { Transaction } from "@/infra/interfacess";
@@ -99,7 +100,7 @@ export const TransactionList: React.FC<TransactionListProps> = ({
                     />
                   </div>
                   <div className={home.desc}>
-                    <p>{transaction.description || "Sem descrição"}</p>
+                    <p>{AbreviateString.abbreviate(transaction.description || "", 50) || "Sem descrição"}</p>
                     <small>
                       {new Date(transaction.createdAt).toLocaleDateString()}
                     </small>

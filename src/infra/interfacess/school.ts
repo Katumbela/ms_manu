@@ -3,7 +3,7 @@ import type { Enrollment } from "./enrollements";
 import type { ExamSchedule } from "./exam_schedule";
 
 export interface School {
-  id: string;;
+  id: string;
   schoolName: string;
   founder: string;
   foundedYear: number;

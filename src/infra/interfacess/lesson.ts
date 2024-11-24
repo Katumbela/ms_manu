@@ -1,7 +1,7 @@
 import type { Attendance } from "./attendance";
 
 export interface Lesson {
-  id: string;;
+  id: string;
   lessonNumber: number;
   title: string;
   description: string;

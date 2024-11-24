@@ -38,7 +38,7 @@ const usePeriodicStudentUpdate = () => {
     const interval = setInterval(fetchStudentData, 15000);
 
     return () => clearInterval(interval);
-  }, [dispatch]);
+  }, [Student?.adhesionNumber, studentService]);
 };
 
 export default usePeriodicStudentUpdate;

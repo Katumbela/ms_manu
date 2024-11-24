@@ -41,7 +41,7 @@ export default function InfoMulti() {
               <div className={info2.items}>
                 <p className={info2.dark_g}>Cartão</p>
                 <p className={`${info2.primary} ${info2.anoA}`}>
-                  {account?.card_number}
+                  {account?.account_number}
                 </p>
               </div>
 

@@ -1,5 +1,5 @@
 export interface Transaction {
-  _id: string; 
+  id: string; 
   amount: number;
   type: 'credit' | 'debit';
   status: 'approved' | 'pending' | 'success' | 'failed'; 

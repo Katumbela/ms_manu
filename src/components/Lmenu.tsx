@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect, useRef } from "react";
 import styles from "../styles/Lmenu.module.css";
 import Image from "next/image";

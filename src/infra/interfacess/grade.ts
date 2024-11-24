@@ -3,7 +3,7 @@ import type { Discipline } from "./discipline";
 import type { Student } from "./student";
 
 export interface Grade {
-  id: string;;
+  id: string;
   semester: number;
   p1: number;
   p2: number;

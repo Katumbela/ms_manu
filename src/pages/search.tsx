@@ -13,8 +13,8 @@ export default function SearchI() {
   const query = searchParams.get("type");
 
   const [schools, setSchools] = useState<School[]>([]);
-  const [searchTerm, setSearchTerm] = useState("");
   const [filteredSchools, setFilteredSchools] = useState<School[]>([]);
+  const [searchTerm, setSearchTerm] = useState("");
   const [loadSchools, setLoadSchools] = useState(true);
 
   useEffect(() => {
@@ -22,12 +22,11 @@ export default function SearchI() {
       const service = new SchoolService();
       const data = await service.getSchoolsByType(query ? query : "iem");
       setSchools(data);
-      setFilteredSchools(data);
       setLoadSchools(false);
     };
 
     fetchSchools();
-  }, []);
+  }, [query]);
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const term = e.target.value.toLowerCase();
@@ -80,7 +79,7 @@ export default function SearchI() {
         <div className={search.filter}>
           <p className={search.purple}>Ordenar por:</p>
           <p>
-            {/* {schools.length} resultado{schools.length <= 1 ? "" : "s"} */}
+            {schools.length} resultado{schools.length <= 1 ? "" : "s"}
           </p>
         </div>
 
@@ -91,9 +90,9 @@ export default function SearchI() {
             </>
           ) : (
             <>
-              {/* {filteredSchools.map((course, i) => (
+              {filteredSchools.map((course, i) => (
                 <SchoolComponent data={course} index={i} key={i} />
-              ))} */}
+              ))}
             </>
           )}
         </div>
@@ -103,4 +102,4 @@ export default function SearchI() {
       </div>
     </>
   );
-}
+} 

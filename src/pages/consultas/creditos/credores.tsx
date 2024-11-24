@@ -27,7 +27,7 @@ export default function Credores() {
     }
 
     GetCreditors()
-  }, [])
+  }, [creditService])
 
 
   
@@ -58,7 +58,7 @@ export default function Credores() {
     }
 
     fetchTransactions();
-  }, []);
+  }, [getCredits]);
 
   const lastCredit = myCredits[myCredits.length - 1];
 

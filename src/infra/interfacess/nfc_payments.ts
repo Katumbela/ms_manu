@@ -1,5 +1,5 @@
 export interface NfcPayment {
-  id: string;;
+  id: string;
   paymentAmount: number;
   paymentDate: Date;
   nfcTransactionId: string;

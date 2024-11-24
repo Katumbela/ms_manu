@@ -2,7 +2,7 @@ import type { Course } from "./course";
 import type { School } from "./school";
 
 export interface ExamSchedule {
-  id: string;;
+  id: string;
   date: Date;
   class: string;
   examTitle: string;

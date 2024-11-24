@@ -4,8 +4,12 @@ import Menu from "@/components/menu";
 import Image from "next/image";
 import { users } from "@/utils/image-exporter";
 import Layout from "@/components/Layout";
+import { useAppSelector } from "@/hooks";
+import { selectUser } from "@/store";
+import { StringUtils } from "@/utils";
 
 export default function Movimentos() {
+  const student = useAppSelector(selectUser)
   return (
     <>
       <Layout title="Movimentos | Institucional">
@@ -22,9 +26,9 @@ export default function Movimentos() {
                 priority
               />
               <div className={mov.inner}>
-                <p className={mov.name}>Ana Correia de Assis Diogo</p>
+                <p className={mov.name}>{student?.studentName}</p>
                 <p className={mov.desc}>
-                  Conta <span className={mov.instituicao}>ISPTEC</span>
+                  Conta <span className={mov.instituicao}>{StringUtils.getFirstWord(student?.enrollments?.[0].school.schoolName || "")}</span>
                 </p>
               </div>
             </div>

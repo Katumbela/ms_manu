@@ -14,6 +14,7 @@ import { StringUtils } from "../../utils/string-utils";
 import { DateUtils, NumberUtils } from "@/utils";
 import { users } from "@/utils/image-exporter";
 import Layout from "@/components/Layout";
+import usePeriodicStudentUpdate from "@/hooks/usePeriodicStudentUpdate";
 
 
 export default function Movimentos() {
@@ -24,21 +25,20 @@ export default function Movimentos() {
   // const adhesionNumber = student?.adhesionNumber
   //   ? String(student.adhesionNumber)
   //   : "";
-  // usePeriodicStudentUpdate({ studentAdhesionNumber: adhesionNumber });
+  usePeriodicStudentUpdate();
 
   const TransactsService = new TransactionService();
 
-  async function getTransacts() {
-    if (student?.account?.id) {
-      const datas = await TransactsService.getTransactionsByAccount(
-        student.account.id
-      );
-      return datas;
-    }
-    return [];
-  }
-
+  
   useEffect(() => {
+    async function getTransacts() {
+      
+        const datas = await TransactsService.getTransactionsByAccount(
+          student?.account?.account_number || ""
+        );
+        return datas;
+       
+    }
     async function fetchTransactions() {
       const transacts = await getTransacts();
       console.log(transacts);
@@ -46,8 +46,10 @@ export default function Movimentos() {
     }
 
     fetchTransactions();
-  }, []);
+    console.log(fetchTransactions)
+  }, [TransactsService, student?.account?.account_number]);
 
+  console.log(transactions)
   return (
     <>
       <Layout title="Movimentos Multischool">
