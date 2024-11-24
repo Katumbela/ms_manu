@@ -4,17 +4,19 @@ import Menu from "@/components/menu";
 import Image from "next/image";
 import Link from "next/link";
 import Layout from "@/components/Layout";
+import { useAppSelector } from "@/hooks";
+import { selectUser } from "@/store";
 
 export default function Materiais() {
+  const student = useAppSelector(selectUser)
+
   return (
     <Layout title="Materiais">
       <div className={hor.container}>
         <Top information="Materiais" pagina="curso"></Top>
-
         <div className={hor.top}>
-          <p>EINF6-M1 - Engenharia Informática</p>
+        <p>EINF6-M1 - {student?.enrollments?.[0].course.name}</p>
         </div>
-
         <div className={hor.day}>
           <p className={hor.title}>Segunda-feira</p>
           <div className={hor.top}>
