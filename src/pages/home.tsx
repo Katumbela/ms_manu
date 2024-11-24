@@ -33,18 +33,18 @@ export default function Home() {
 
   const TransactsService = new TransactionService();
 
-  async function getTransacts() {
-    if (student?.account) {
-      const datas = await TransactsService.getTransactionsByAccount(
-        student.account.account_number
-      );
-      return datas;
-    }
-    return [];
-  }
-
   useEffect(() => {
     async function fetchTransactions() {
+      async function getTransacts() {
+        if (student?.account) {
+          const datas = await TransactsService.getTransactionsByAccount(
+            student.account.account_number
+          );
+          return datas;
+        }
+        return [];
+      }
+
       const transacts = await getTransacts();
       // console.log(transacts);
       setTransactions(transacts); // Atualizando o estado com as transações
@@ -52,7 +52,7 @@ export default function Home() {
 
     fetchTransactions();
     // console.log(student); 
-  }, [getTransacts, student]);
+  }, [student]);
 
   const color = "#f9d048";
 

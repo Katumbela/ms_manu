@@ -29,7 +29,7 @@ const authSlice = createSlice({
     },
     logout: (state) => {
       setTimeout(() => {
-        window.location.href = routes.HOME_ROUTE
+        window.location.href = "/"
       }, 2500);
       return {
         ...state,
