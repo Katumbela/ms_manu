@@ -1,0 +1,36 @@
+$iphone5-se: 320px;
+$samsung-xiaomi-min: 360px;
+$samsung-xiaomi-max: 780px;
+$iphone-min: 375px;
+$iphone-max: 413px;
+$tablet-min: 768px;
+$tablet-max: 834px;
+$small-phone-max: 440px;
+$medium-phone-max: 767px;
+$large-phone-min: 414px;
+$large-phone-max: 428px;
+$high-screen-min-height: 780px;
+
+@mixin breakpoint($min-width: null, $max-width: null, $min-height: null, $max-height: null) {
+    @media only screen {
+        #{
+ if($min-width, "(min-width: #{$min-width})", "")
+    }
+
+    #{
+ if($max-width, " and (max-width: #{$max-width})", "")
+}
+
+#{
+ if($min-height, " and (min-height: #{$min-height})", "")
+}
+
+#{
+ if($max-height, " and (max-height: #{$max-height})", "")
+}
+
+    {
+    @content;
+}
+}
+}
