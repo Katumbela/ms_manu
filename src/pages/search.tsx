@@ -21,8 +21,8 @@ export default function SearchI() {
     const fetchSchools = async () => {
       const service = new SchoolService();
       const data: any = await service.getSchoolsByType(query ? query : "iem");
-      setSchools(data.data);
-      setFilteredSchools(data.data)
+      setSchools(data);
+      setFilteredSchools(data)
       setLoadSchools(false);
     };
     fetchSchools();
