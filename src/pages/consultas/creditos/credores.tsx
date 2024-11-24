@@ -2,14 +2,20 @@ import cred from "@/styles/consultas/creditos/credores.module.css";
 import Top from "@/components/top";
 import Menu from "@/components/menu"; 
 import Link from "next/link";
-import { Creditor } from "@/infra/interfacess";
+import { Creditor, CreditRequest } from "@/infra/interfacess";
 import { CreditorsService } from "@/services/creditors_services";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { StringUtils } from "@/utils";
+import { NumberUtils, StringUtils } from "@/utils";
+import { selectUser } from "@/store";
+import { useAppSelector } from "@/hooks";
+import { CreditRequestService } from "@/services";
 
 export default function Credores() {
 
+  const student = useAppSelector(selectUser)
+  const account = student?.account
+  
 
   const [creditors, setCreditors] = useState<Creditor[]>([])
   const creditService = new CreditorsService()
@@ -24,6 +30,39 @@ export default function Credores() {
   }, [])
 
 
+  
+  const [myCredits, setMyCredits] = useState<CreditRequest[]>([]);
+
+  // const adhesionNumber = student?.adhesionNumber
+  //   ? String(student.adhesionNumber)
+  //   : "";
+  // usePeriodicStudentUpdate({ studentAdhesionNumber: adhesionNumber });
+
+  const creditsService = new CreditRequestService();
+
+  async function getCredits() {
+    if (account) {
+      const datas = await creditsService.getCreditRequestHistory(
+        account.account_number
+      );
+      return datas;
+    }
+    return [];
+  }
+
+  useEffect(() => {
+    async function fetchTransactions() {
+      const transacts = await getCredits();
+      // console.log(transacts);
+      setMyCredits(transacts);
+    }
+
+    fetchTransactions();
+  }, []);
+
+  const lastCredit = myCredits[myCredits.length - 1];
+
+
 
   return (
     <>
@@ -31,7 +70,7 @@ export default function Credores() {
         <Top information="Credores" pagina="/consultsM"/>
         <div className={cred.top}>
           <p>Crédito Actual</p>
-          <h1>35.000,00 kz</h1>
+          <h1>{lastCredit ? NumberUtils.formatCurrency(lastCredit.amount) : NumberUtils.formatCurrency(0)} kz</h1>
         </div>
         <div className={cred.list}>
           <div className={cred.top}>
