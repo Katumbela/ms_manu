@@ -4,7 +4,7 @@ import payC from "@/styles/payments/instituicao/confirmacao2.module.css";
 import Menu from "@/components/menu";
 import Image from "next/image";
 import Link from "next/link";
-import usePeriodicStudentUpdate from "@/hooks/usePeriodicStudentUpdate";
+// import usePeriodicStudentUpdate from "@/hooks/usePeriodicStudentUpdate";
 import { CreditRequest } from "@/infra/interfacess";
 import { CreditRequestService } from "@/services";
 import { useState, useEffect } from "react";
