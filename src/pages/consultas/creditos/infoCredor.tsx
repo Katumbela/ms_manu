@@ -11,7 +11,7 @@ import styles from "@/styles/consultas/creditos/creditRange.module.css"; // Impo
 import { CreditRequestService } from "@/services";
 import { useAppSelector } from "@/hooks";
 import { selectUser } from "@/store";
-import { AlertUtils } from "@/utils";
+import { AlertUtils, DateUtils } from "@/utils";
 import Layout from "@/components/Layout";
 import Image from "next/image"; 
 
@@ -110,7 +110,7 @@ export default function InfoCredor() {
             <div className={cred.items}>
               <p className={cred.dark_g}>Data do pedido</p>
               <p className={`${cred.primary} ${cred.anoA}`}>
-                17/09/24 às 10h:40:30
+                {DateUtils.getDateTimePt(new Date())}
               </p>
             </div>
           </div>
