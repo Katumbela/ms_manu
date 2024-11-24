@@ -96,11 +96,11 @@ console.log(school_id)
             {schools?.about}
           </div>
           <div className={details.btns}>
-            <Button
+            {/* <Button
               variant="purple"
               description="Fazer matrícula"
-              redirect="/matricula"
-            ></Button>
+              // redirect="/matricula"
+            ></Button> */}
             <Button
               variant="light"
               description="Ver requisitos"
@@ -114,13 +114,13 @@ console.log(school_id)
             <br />
             <ul>
               {/* <li>{schools?.courses.length}</li> */}
-              {/* {
+              {
                 schools?.courses.map((course, index) => (
                   <li onClick={() => { navigate.push(`${routes.REGISTER_ROUTE}?school=${school_id}&school_name=${schools.schoolName}&chosen_course=${course.name}&course=${course.id}`) }} key={index} className='px-5 py-3 my-4 transition-all border-2 cursor-pointer hover:bg-primary/10 hover:font-bold active:text-white active:bg-primary active border-primary rounded-2xl'>
                     {course.name}
                   </li>
                 ))
-              } */}
+              }
             </ul>
           </Modal>
 
