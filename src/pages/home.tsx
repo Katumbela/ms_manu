@@ -46,12 +46,12 @@ export default function Home() {
   useEffect(() => {
     async function fetchTransactions() {
       const transacts = await getTransacts();
-      console.log(transacts);
+      // console.log(transacts);
       setTransactions(transacts); // Atualizando o estado com as transações
     }
 
     fetchTransactions();
-    console.log(student); // Adicione este log para verificar o estado do usuário
+    // console.log(student); 
   }, [getTransacts, student]);
 
   const color = "#f9d048";
