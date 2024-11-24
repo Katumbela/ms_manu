@@ -1,0 +1,214 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/bg/welcome.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: border-box;
+  overflow: visible;
+  font-family: "Raleway", sans-serif;
+  position: relative;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(28, 28, 28, 0.7);
+  z-index: 1;
+}
+
+.container .box {
+  width: 100%;
+  height: 28vh;
+}
+
+.container .inner_c {
+  width: 100%;
+  height: 47vh;
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container .text {
+  width: 94%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 0 10px;
+}
+
+.container .text h1 {
+  color: var(--txt-light);
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.container .text p {
+  color: var(--txt-light);
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.container .cta {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9;
+  margin: 30px 0 0 0;
+}
+
+.container .link {
+  color: var(--txt-light);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* IPHONE 5 & SE */
+@media only screen and (max-width: 320px) {
+  .container {
+    height: 105vh;
+  }
+  .container .inner_c {
+    height: 65vh;
+  }
+
+  .container .text {
+    height: 47vh;
+  }
+
+  .container .cta {
+    height: 65vh;
+  }
+}
+
+/* SAMSUNG & XIAOMI */
+@media only screen and (min-width: 360px) and (max-width: 440px) {
+  .container .box {
+    height: 35vh;
+  }
+  /* .container .inner_c {
+    height: 65vh;
+  } */
+  .container .text {
+    width: 95%;
+    height: 49%;
+  }
+  .container .text h1 {
+    font-size: 2rem;
+  }
+  .container .text p {
+    font-size: 1.14rem;
+  }
+  .container .button {
+    font-size: 1em;
+  }
+}
+
+/* IPHONE 6/7/8 & X/11/12 */
+@media only screen and (min-width: 375px) and (max-width: 440px) {
+  .container .box {
+    height: 35vh;
+  }
+  /* .container .inner_c {
+    height: 28vh;
+  } */
+  .container .text {
+    height: 49%;
+  }
+  .container .text h1 {
+    font-size: 2rem;
+  }
+  .container .text p {
+    font-size: 1.14rem;
+  }
+  .container .button {
+    font-size: 1.1em;
+  }
+}
+
+/* IPHONE 6/7/8 PLUS & LARGER PHONES */
+@media only screen and (min-width: 414px) and (max-width: 780px) {
+  .container .box {
+    height: 35vh;
+  }
+  /* .container .inner_c {
+    height: 48vh;
+  } */
+  .container .text {
+    width: 90%;
+    height: 47%;
+  }
+  .container .text h1 {
+    font-size: 2.3rem;
+  }
+  .container .text p {
+    font-size: 1.2rem;
+  }
+}
+
+/* LARGER DEVICES - TABLETS */
+@media only screen and (min-width: 768px) and (max-width: 834px) {
+  .container .box {
+    height: 20vh;
+  }
+  /* .container .inner_c {
+    height: 80vh;
+    margin: 0 0 55px 0;
+  } */
+  .container .text {
+    width: 90%;
+    height: 60%;
+  }
+  .container .text h1 {
+    font-size: 4.8rem;
+  }
+  .container .text p {
+    font-size: 2.1rem;
+  }
+  .container .cta {
+    height: 35%;
+  }
+  .container .button {
+    width: 90%;
+    border-radius: 30px;
+    font-size: 1.5rem;
+    padding: 4%;
+  }
+  .container .link {
+    font-size: 1.5rem;
+  }
+}
+
+/* MIN HEIGHT FOR LARGE SCREENS */
+@media only screen and (min-height: 780px) {
+  .container .text {
+    width: 95%;
+    height: 47%;
+  }
+  .container .text h1 {
+    font-size: 2.2rem;
+  }
+  .container .text p {
+    font-size: 1.2rem;
+  }
+  .container .cta {
+    height: 40%;
+  }
+}
