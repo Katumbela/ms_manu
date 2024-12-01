@@ -125,7 +125,7 @@ export function CartaoEstudante({
               <b>Curso:</b> {studentt?.enrollments?.[0].course.name || "Curso indisponível"}
             </li>
             <li>
-              <b>Nº matrícula:</b> {studentt?.adhesionNumber || "N/A"}
+              <b>Nº Matrícula:</b> {studentt?.adhesionNumber || "N/A"}
             </li>
             <li>
               <b>Turma:</b> {student.classGroup || "Turma indisponível"}
@@ -141,7 +141,7 @@ export function CartaoEstudante({
             width={200}
             height={90}
             priority
-            className={styles.logoM}
+            className={`${styles.logoM} rounded-full`}
           />
         </div>
         <QRCode value={qrData} size={53} className={styles.qrcode} />
@@ -198,6 +198,7 @@ export function CartaoEstagiario({
                 src={`/img/${student.logo}`}
                 alt="Logo da instituição"
                 width={45}
+                style={{}}
                 height={45}
                 priority
               />

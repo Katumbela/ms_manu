@@ -26,6 +26,7 @@ export default function Nfcpayment() {
     }
   };
 
+
   return (
     <>
       <Layout title="Pagamento">
@@ -36,7 +37,7 @@ export default function Nfcpayment() {
             <CartaoMultischool />
           </div>
           <div className={pay.nfc}>
-            <Image src="/icons/nfc.svg" alt="" width="90" />
+            <Image height={'100'} src="/icons/nfc.svg" alt="" width="90" />
             <p>Aproxime o seu smartphone ao TPA...</p>
           </div>
 
@@ -46,6 +47,7 @@ export default function Nfcpayment() {
               redirect="proof"
             ></Button>
           </div>
+
           <video
             ref={videoRef}
             autoPlay

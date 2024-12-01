@@ -1,6 +1,6 @@
 import cred from "@/styles/transfer/transfer.module.css";
 import Top from "@/components/top";
-import payC from "@/styles/payments/instituicao/confirmacao2.module.css";
+// import payC from "@/styles/payments/instituicao/confirmacao2.module.css";
 import Menu from "@/components/menu";
 import Image from "next/image";
 import PurpleButton from "@/components/buttons";
@@ -13,40 +13,48 @@ import { TransactionService } from "@/services";
 import { useState, useEffect } from "react";
 import { users } from "@/utils/image-exporter";
 import Layout from "@/components/Layout";
+import { TransactionList } from "@/components/transactionTable/transactrionTable";
 
 
 export default function Transfer() {
+  
+  
   const student = useAppSelector(selectUser);
-  const account = student?.account;
-
   const [transactions, setTransactions] = useState<Transaction[]>([]);
+  const account = student?.account;
  
+  usePeriodicStudentUpdate();
+
+ 
+  
   usePeriodicStudentUpdate();
 
   const TransactsService = new TransactionService();
 
-  async function getTransacts() {
-    if (student?.account?.id) {
-      const datas = await TransactsService.getTransactionsByAccount(
-        student.account.id
-      );
-      return datas;
-    }
-    return [];
-  }
-
   useEffect(() => {
     async function fetchTransactions() {
+      async function getTransacts() {
+        if (student?.account) {
+          const datas = await TransactsService.getTransactionsByAccount(
+            student.account.account_number
+          );
+          return datas;
+        }
+        return [];
+      }
+
       const transacts = await getTransacts();
-      console.log(transacts);
+      // console.log(transacts);
       setTransactions(transacts); // Atualizando o estado com as transações
     }
 
     fetchTransactions();
-  }, []);
+    // console.log(student); 
+  }, [student]);
+
 
   console.log(transactions);
-  console.log(student);
+  
   return (
     <>
       <Layout title="Transferências">
@@ -56,7 +64,9 @@ export default function Transfer() {
           <div className={cred.first}>
             <div className={cred.inner1}>
               <Image src={users.user_default} width={80} height={80} alt="" />
-              <p>Saldo disponível</p>
+              <p>Saldo disponívell   {
+            transactions.length
+          }</p>
               <h1>
                 {NumberUtils.formatCurrency(
                   account?.balance ? account?.balance : 0
@@ -65,7 +75,7 @@ export default function Transfer() {
             </div>
           </div>
 
-          <div className={payC.movimentos}>
+         {/* <div className={payC.movimentos}>
             <div className={payC.top}>
               <p>Descrição</p>
               <p className={payC.subtitle}>Montante</p>
@@ -127,7 +137,10 @@ export default function Transfer() {
                 <p className={`${payC.price} ${payC.danger}`}>-50.000,00 kz</p>
               </div>
             </div>
-          </div>
+          </div> */}
+
+<TransactionList transactions={transactions}/>
+          
           <div className={cred.cta}>
             <PurpleButton
               description="Efectuar transferência"
@@ -137,7 +150,10 @@ export default function Transfer() {
           </div>
           <Menu />
         </div>
+
+        
       </Layout>
+
     </>
   );
 }

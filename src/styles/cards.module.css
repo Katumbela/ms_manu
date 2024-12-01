@@ -374,6 +374,7 @@
 
   .container .cards .card_e .top .logoI {
     width: 40px;
+    border-radius: 90px;
   }
 
   .container .cards .card_e .top .icon {
@@ -409,6 +410,7 @@
 
   .container .cards .card_e .bottom .logoM {
     width: 190px;
+    border-radius: 100px;
   }
 
   .container .cards .card_e .bottom .qrcode {
