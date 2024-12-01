@@ -14,6 +14,7 @@ import Image from "next/image";
 interface TransactionListProps {
   transactions: Transaction[];
   showShowMore?: boolean;
+  onlyTransfer?: boolean
 }
 
 const abbreviateText = (text: string, maxLength: number): string => {
@@ -23,6 +24,7 @@ const abbreviateText = (text: string, maxLength: number): string => {
 export const TransactionList: React.FC<TransactionListProps> = ({
   transactions,
   showShowMore = true,
+  onlyTransfer = false,
 }) => {
   const { openModal } = useModal();
   const isAuth = useAppSelector(selectIsAuthenticated);
@@ -80,7 +82,7 @@ export const TransactionList: React.FC<TransactionListProps> = ({
           {transactions.length === 0 ? (
             <p>Nenhuma transação encontrada.</p>
           ) : (
-            transactions.slice(0, 5).map(
+            transactions.filter((e) => (onlyTransfer ? e.status != "approved" && e.status != "pending" : e.status)).slice(0, 5).map(
               (
                 transaction // Limitar a 5 transações
               ) => (

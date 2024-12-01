@@ -138,8 +138,8 @@ export default function Transfer() {
               </div>
             </div>
           </div> */}
-
-<TransactionList transactions={transactions}/>
+          
+          <TransactionList onlyTransfer={true} transactions={transactions}/>
           
           <div className={cred.cta}>
             <PurpleButton
