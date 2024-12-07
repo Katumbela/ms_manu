@@ -25,4 +25,21 @@ export default class AlertUtils {
 			}
 		})
 	}
+
+	static info(message: string, position?: ToastOptions['position']) {
+		toast(message, {
+			position: position || 'top-center',
+			icon: 'ℹ️',
+			style: {
+				border: '1px solid #2383ff',
+				padding: '14px',
+				boxShadow: '2px 3px 2px #2383ff',
+				color: '#713200'
+			},
+			iconTheme: {
+				primary: '#713200',
+				secondary: '#FFFAEE'
+			}
+		})
+	}
 }

@@ -5,23 +5,51 @@ import Image from "next/image";
 import PurpleButton from "@/components/buttons";
 import { users } from "@/utils/image-exporter";
 import Layout from "@/components/Layout";
+import { selectUser } from "@/store";
+import { useAppSelector } from "@/hooks";
+import { ApplicationsService } from "@/services/application_service";
+import { useEffect, useState } from "react";
+import { DateUtils } from "@/utils";
 
 export default function ResultadosEstagio() {
+  
+  const student = useAppSelector(selectUser);
+  
+  const [myApplication, setMyApplication] = useState<any | null>(null);
+
+  
+  const applicationService = new ApplicationsService();
+
+  useEffect(() => {
+    async function GetCreditor() {
+      const data = await applicationService.getApplicationByStudentId(
+        student?.id || ""
+      );
+      setMyApplication(data[0]);
+    }
+    GetCreditor();
+  }, []);
+
+
+  // console.warn(myApplication);
+
+  
+
   return (
     <>
       <Layout title="Resultados estágios">
         <div className={candidatura.container}>
           <Top information="Resultados" pagina="/services/menu"></Top>
           <div className={candidatura.foto}>
-            <Image src={users.user_default} width={130} height={130} alt="" />
+            <Image src={student?.profile_pic || users.user_default} width={130} height={130} alt="" />
 
-            <h2>Ana Correia de Assis Diogo</h2>
+            <h2>{student?.studentName} </h2>
           </div>
           <div className={candidatura.info}>
             <div className={candidatura.items}>
               <p className={candidatura.dark_g}>Número de estudante</p>
               <p className={`${candidatura.primary} ${candidatura.estnum}`}>
-                20242190
+              {student?.adhesionNumber}
               </p>
             </div>
 
@@ -34,34 +62,34 @@ export default function ResultadosEstagio() {
 
             <div className={candidatura.items}>
               <p className={candidatura.dark_g}>Curso</p>
-              <p className={` ${candidatura.curso}`}>Engenharia informática</p>
+              <p className={` ${candidatura.curso}`}>{student?.enrollments?.[0].course.name}</p>
             </div>
 
             <div className={candidatura.items}>
               <p className={candidatura.dark_g}>Média anual</p>
               <p className={`${candidatura.primary} ${candidatura.semestre}`}>
-                15 valores
+                --
               </p>
             </div>
 
             <div className={candidatura.items}>
               <p className={candidatura.dark_g}>Idade</p>
               <p className={`${candidatura.primary} ${candidatura.anolec}`}>
-                22 anos
+                --
               </p>
             </div>
 
             <div className={candidatura.items}>
               <p className={candidatura.dark_g}>Data da candidatura</p>
               <p className={`${candidatura.primary} ${candidatura.anoA}`}>
-                17/09/24 às 10h:40:30
+                {DateUtils.getDateTimePt(new Date(myApplication?.appliedAt || ""))}
               </p>
             </div>
 
             <div className={candidatura.items}>
               <p className={candidatura.dark_g}>Estado</p>
               <p className={`${candidatura.danger} ${candidatura.turma}`}>
-                Rejeitado
+                {myApplication?.status}
               </p>
             </div>
           </div>

@@ -56,7 +56,7 @@ export default function Estagios() {
 					</div>
 					<div className={estagios.credL}>
 						{internships.map((internship, i) => (
-							<Link key={i} href={"verOpcao?company="+ internship.providerCompany?.id} className={estagios.inner}>
+							<Link key={i} href={"verOpcao?internship="+ internship.id} className={estagios.inner}>
 								<Image src={internship.providerCompany?.company_logo || ""} width={60} height={60} alt={internship.providerCompany?.company_logo || ""} />
 								<p className={estagios.in}>{internship.providerCompany?.companyName}</p>
 								<p>{DateUtils.getDatePt(new Date(internship.createdAt))}</p>
