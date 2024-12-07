@@ -4,8 +4,29 @@ import Menu from "@/components/menu";
 import Image from "next/image";
 import Link from "next/link";
 import Layout from "@/components/Layout";
+import { useEffect, useState } from "react";
+import { IScholarship } from "@/infra/interfacess/scholarship";
+import { DateUtils } from "@/utils";
+import { ScholarShipsService } from "@/services/scholarships_services";
 
 export default function BolsasEstudo() {
+
+  const [ scholarships, setScholarships ] = useState<IScholarship[]>([]);
+	const scholarshipService = new ScholarShipsService();
+
+	useEffect(
+		() => {
+			async function GetCreditors() {
+				const data = await scholarshipService.getScholarships();
+				setScholarships(data);
+			}
+
+			GetCreditors();
+		},
+		[ scholarshipService ]
+	);
+
+
   return (
     <Layout title="Bolsas">
       <div className={bolsas.container}>
@@ -13,7 +34,7 @@ export default function BolsasEstudo() {
 
         <div className={bolsas.top}>
           <p>Bolsas de estudo</p>
-          <h2>30 disponíveis</h2>
+          <h2>{scholarships.length} disponíveis</h2>
         </div>
         <div className={bolsas.input}>
           <div className={bolsas.inputContainer}>
@@ -39,32 +60,15 @@ export default function BolsasEstudo() {
             <p>Selecione uma opção</p>
             <p>Prazo</p>
           </div>
-          <div className={bolsas.credL}>
-            <Link href="verBolsa" className={bolsas.inner}>
-              <Image src={"/icons/kwik.svg"} width={60} height={60} alt="" />
-              <p className={bolsas.in}>Kwik invest: Bolsa est...</p>
-              <p>10/10/24</p>
-            </Link>
-            <Link href="verBolsa" className={bolsas.inner}>
-              <Image src={"/icons/kwik.svg"} width={60} height={60} alt="" />
-              <p className={bolsas.in}>Kwik invest: Bolsa est...</p>
-              <p>10/10/24</p>
-            </Link>
-            <Link href="verBolsa" className={bolsas.inner}>
-              <Image src={"/icons/kwik.svg"} width={60} height={60} alt="" />
-              <p className={bolsas.in}>Kwik invest: Bolsa est...</p>
-              <p>10/10/24</p>
-            </Link>
-            <Link href="verBolsa" className={bolsas.inner}>
-              <Image src={"/icons/kwik.svg"} width={60} height={60} alt="" />
-              <p className={bolsas.in}>Kwik invest: Bolsa est...</p>
-              <p>10/10/24</p>
-            </Link>
-            <Link href="verBolsa" className={bolsas.inner}>
-              <Image src={"/icons/kwik.svg"} width={60} height={60} alt="" />
-              <p className={bolsas.in}>Kwik invest: Bolsa est...</p>
-              <p>10/10/24</p>
-            </Link>
+          
+            <div className={bolsas.credL}>
+						{scholarships.map((scholarship, i) => (
+							<Link key={i} href={"verBolsa?scholarship="+ scholarship.id} className={bolsas.inner}>
+								<Image src={scholarship.providerSchool?.school_logo || ""} width={60} height={60} alt={scholarship.providerSchool?.school_logo || ""} />
+								<p className={bolsas.in}>{scholarship.providerSchool?.schoolName}</p>
+								<p>{DateUtils.getDatePt(new Date(scholarship.createdAt))}</p>
+							</Link>
+						))} 
           </div>
         </div>
 

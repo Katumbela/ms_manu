@@ -6,6 +6,11 @@ export interface IScholarship {
     id: string; // Identificador único
     title: string; // Título da bolsa
     description: string; // Descrição da bolsa
+    positions?: number; // Campo opcional
+    catalog?: string; // Campo opcional
+    type?: string
+    targetPeople?: string; // Campo opcional, por padrão "Licenciados"
+    minimumGrade?: number; // Campo opcional
     providerId: string; // Identificador do provedor
     providerType: "School" | "Company"; // Tipo do provedor: escola ou empresa
     createdAt: string; // Data de criação no formato ISO string

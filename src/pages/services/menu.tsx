@@ -4,8 +4,33 @@ import Menu from "@/components/menu";
 import Image from "next/image";
 import Link from "next/link";
 import Layout from "@/components/Layout";
+import { useAppSelector } from "@/hooks";
+import { ApplicationsService } from "@/services/application_service";
+import { selectUser } from "@/store";
+import { useState, useEffect } from "react";
+import { IApplication } from '../../infra/interfacess/application';
 
 export default function MenuServices() {
+
+  
+  const student = useAppSelector(selectUser);
+  
+  const [myApplication, setMyApplication] = useState<IApplication[] | []>([]);
+
+  
+  const applicationService = new ApplicationsService();
+
+  useEffect(() => {
+    async function GetCreditor() {
+      const data = await applicationService.getApplicationByStudentId(
+        student?.id || ""
+      );
+      setMyApplication(data);
+    }
+    GetCreditor();
+  }, []);
+
+  
   return (
     <Layout title="Menu multischool">
       <div className={pay.container}>
@@ -70,134 +95,42 @@ export default function MenuServices() {
         <div className={pay.pendentes}>
           <p>As minhas candidaturas</p>
           <div className={pay.pending}>
-            <div className={pay.details}>
-              <div className={pay.icon}>
-                <Image
-                  className={pay.avatar}
-                  src={"/icons/bolsas.svg"}
-                  alt="ba2ck"
-                  width={25}
-                  height={25}
-                  priority
-                />
-              </div>
-              <div className={pay.desc}>
-                <p>Bolsa de Estudos: INAGBE</p>
-                <small>10.09.2024 às 12h:30:50</small>
-              </div>
-              <div className={pay.amount}>
-                <Link
-                  href="bolsas/resultados"
-                  className={`${pay.price} ${pay.warning}`}
-                >
-                  <u>Abrir</u>
-                </Link>
-              </div>
-            </div>
-            <div className={pay.details}>
-              <div className={pay.icon}>
-                <Image
-                  className={pay.avatar}
-                  src={"/icons/bolsas.svg"}
-                  alt="ba2ck"
-                  width={25}
-                  height={25}
-                  priority
-                />
-              </div>
-              <div className={pay.desc}>
-                <p>Bolsa de Estudos: INAGBE</p>
-                <small>10.09.2024 às 12h:30:50</small>
-              </div>
-              <div className={pay.amount}>
-                <Link
-                  href="bolsas/resultados"
-                  className={`${pay.price} ${pay.warning}`}
-                >
-                  <u>Abrir</u>
-                </Link>
-              </div>
-            </div>
 
-            <div className={pay.details}>
-              <div className={pay.icon}>
-                <Image
-                  className={pay.avatar}
-                  src={"/icons/service.svg"}
-                  alt="ba2ck"
-                  width={25}
-                  height={25}
-                  priority
-                />
-              </div>
-              <div className={pay.desc}>
-                <p>Bolsa de Estudos: INAGBE</p>
-                <small>10.09.2024 às 12h:30:50</small>
-              </div>
-              <div className={pay.amount}>
-                <Link
-                  href="bolsas/resultados"
-                  className={`${pay.price} ${pay.warning}`}
-                >
-                  <u>Abrir</u>
-                </Link>
-              </div>
-            </div>
-
-            <div className={pay.details}>
-              <div className={pay.icon}>
-                <Image
-                  className={pay.avatar}
-                  src={"/icons/service.svg"}
-                  alt="ba2ck"
-                  width={25}
-                  height={25}
-                  priority
-                />
-              </div>
-              <div className={pay.desc}>
-                <p>Bolsa de Estudos: INAGBE</p>
-                <small>10.09.2024 às 12h:30:50</small>
-              </div>
-              <div className={pay.amount}>
-                <Link
-                  href="bolsas/resultados"
-                  className={`${pay.price} ${pay.warning}`}
-                >
-                  <u>Abrir</u>
-                </Link>
-              </div>
-            </div>
-
-            <div className={pay.details}>
-              <div className={pay.icon}>
-                <Image
-                  className={pay.avatar}
-                  src={"/icons/service.svg"}
-                  alt="ba2ck"
-                  width={25}
-                  height={25}
-                  priority
-                />
-              </div>
-              <div className={pay.desc}>
-                <p>Bolsa de Estudos: INAGBE</p>
-                <small>10.09.2024 às 12h:30:50</small>
-              </div>
-              <div className={pay.amount}>
-                <Link
-                  href="bolsas/resultados"
-                  className={`${pay.price} ${pay.warning}`}
-                >
-                  <u>Abrir</u>
-                </Link>
-              </div>
-            </div>
+          {
+              myApplication.map((application, index) => (
+                <div key={index} className={pay.details}>
+                  <div className={pay.icon}>
+                    <Image
+                      className={pay.avatar}
+                      src={"/icons/bolsas.svg"}
+                      alt="ba2ck"
+                      width={25}
+                      height={25}
+                      priority
+                    />
+                  </div>
+                  <div className={pay.desc}>
+                    <p>
+                      {application.scholarship ? `Bolsa de Estudos: ${application.scholarship.providerCompany?.companyName}` : `Estágio: ${application.internship?.title}`}
+                    </p>
+                    <small>{new Date(application.appliedAt).toLocaleString()}</small>
+                  </div>
+                  <div className={pay.amount}>
+                    <Link
+                      href={application.scholarship ? "bolsas/resultados?scholarship=" + application.id : "estagios/resultados?internship=" + application.id}
+                      className={`${pay.price} ${pay.warning}`}
+                    >
+                      <u>Abrir</u>
+                    </Link>
+                  </div>
+                </div>
+              ))
+            }
+           
           </div>
-          {/* FINAL PENDENTES */}
+          </div> 
         </div>
-        <Menu />
-      </div>
+        <Menu /> 
     </Layout>
   );
 }

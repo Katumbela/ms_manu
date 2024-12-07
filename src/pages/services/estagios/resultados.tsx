@@ -10,8 +10,13 @@ import { useAppSelector } from "@/hooks";
 import { ApplicationsService } from "@/services/application_service";
 import { useEffect, useState } from "react";
 import { DateUtils } from "@/utils";
+import { useSearchParams } from "next/navigation";
 
 export default function ResultadosEstagio() {
+  
+  
+  const q = useSearchParams();
+  const internshipId = q.get("internship");
   
   const student = useAppSelector(selectUser);
   
@@ -22,10 +27,10 @@ export default function ResultadosEstagio() {
 
   useEffect(() => {
     async function GetCreditor() {
-      const data = await applicationService.getApplicationByStudentId(
-        student?.id || ""
+      const data = await applicationService.getApplicationById(
+        internshipId || ""
       );
-      setMyApplication(data[0]);
+      setMyApplication(data);
     }
     GetCreditor();
   }, []);
